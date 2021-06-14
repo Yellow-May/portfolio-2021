@@ -15,10 +15,17 @@ const Header = () => {
 	return (
 		<Styled>
 			<Container>
-				<NavBar mobInView={navbarstate}></NavBar>
-				<Button onClick={() => setnavbarstate(prev => !prev)}>
+				<NavBar mobInView={navbarstate}>
+					<Button variant='link'>Home</Button>
+					<Button variant='link'>About</Button>
+					<Button variant='link'>Tech Familiarity</Button>
+					<Button variant='link'>Projects</Button>
+				</NavBar>
+
+				<Button onClick={() => setnavbarstate(prev => !prev)} title='nav button' variant='icon'>
 					{navbarstate ? <CgMenuRight /> : <CgMenuLeft />}
 				</Button>
+
 				<Switch
 					checked={switchstate}
 					onClick={() => setswitchstate(prev => !prev)}

@@ -8,7 +8,7 @@ export default styled.div<StyledSwitchProps>(props => ({
 	width: 60,
 	height: 30,
 	borderRadius: 30,
-	boxShadow: " 2px 2px 2px rgba(255, 255, 255, 0.25)",
+	boxShadow: "-1px -1px 0px rgba(255, 255, 255, 0.25), 1px 1px 0px rgba(0, 0, 0, 0.125)",
 	position: "relative",
 	cursor: "pointer",
 
