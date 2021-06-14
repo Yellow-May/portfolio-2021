@@ -1,8 +1,13 @@
 import React from "react";
 import Styled from "./styled";
+import Container from "../../styles/components/Container";
 
 const Header = () => {
-	return <Styled>nav switch</Styled>;
+	return (
+		<Styled>
+			<Container>nav switch</Container>
+		</Styled>
+	);
 };
 
 export default Header;
