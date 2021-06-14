@@ -6,7 +6,8 @@ export default styled.header<StyledHeaderProps>(_props => ({
 	padding: "10px 0",
 	backgroundColor: "rgba(35, 35, 35, 1)",
 	color: "rgba(255, 255, 255, 1)",
-	boxShadow: "0 2px 5px rgba(70, 70, 70, 1)",
+	boxShadow: "0 1px 5px rgba(0, 0, 0, 1)",
+	position: "relative",
 
 	"div:first-child": {
 		display: "flex",

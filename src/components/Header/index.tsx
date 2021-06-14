@@ -4,21 +4,24 @@ import Container from "../../styles/components/Container";
 import Button from "../../styles/components/Button";
 import Switch from "../../styles/components/Switch";
 
-import { CgMenuLeft } from "react-icons/cg";
+import { CgMenuLeft, CgMenuRight } from "react-icons/cg";
 import { FaMoon, FaCloudSun } from "react-icons/fa";
+import NavBar from "../../styles/components/NavBar";
 
 const Header = () => {
-	const [switchstate, setstate] = React.useState(false);
+	const [switchstate, setswitchstate] = React.useState(false);
+	const [navbarstate, setnavbarstate] = React.useState(false);
 
 	return (
 		<Styled>
 			<Container>
-				<Button>
-					<CgMenuLeft />
+				<NavBar mobInView={navbarstate} />
+				<Button onClick={() => setnavbarstate(prev => !prev)}>
+					{navbarstate ? <CgMenuRight /> : <CgMenuLeft />}
 				</Button>
 				<Switch
 					checked={switchstate}
-					onClick={() => setstate(prev => !prev)}
+					onClick={() => setswitchstate(prev => !prev)}
 					leftIcon={FaMoon}
 					rightIcon={FaCloudSun}
 				/>
