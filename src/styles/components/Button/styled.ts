@@ -11,10 +11,9 @@ export default styled.button<StyledButtonProps>(props => ({
 	fontSize: 16,
 
 	background: "none",
-	color: "rgba(30, 150, 252, 1)",
+	color: "rgba(255, 255, 255, 1)",
 	borderWidth: 1,
 	borderStyle: "inset",
-	borderColor: "rgba(30, 150, 252, 1)",
 
 	display: "flex",
 	alignItems: "center",
