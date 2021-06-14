@@ -6,4 +6,9 @@ export default createGlobalStyle(_props => ({
 		padding: 0,
 		boxSizing: "border-box",
 	},
+
+	body: {
+		position: "relative",
+		backgroundColor: "rgba(52, 52, 52, 1)",
+	},
 }));
