@@ -15,7 +15,7 @@ const Header = () => {
 	return (
 		<Styled>
 			<Container>
-				<NavBar mobInView={navbarstate} />
+				<NavBar mobInView={navbarstate}></NavBar>
 				<Button onClick={() => setnavbarstate(prev => !prev)}>
 					{navbarstate ? <CgMenuRight /> : <CgMenuLeft />}
 				</Button>
