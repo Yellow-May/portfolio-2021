@@ -3,13 +3,15 @@ import Styled from "./styled";
 import Container from "../../styles/components/Container";
 import Button from "../../styles/components/Button";
 
-import {} from "react-icons";
+import { CgMenuLeft } from "react-icons/cg";
 
 const Header = () => {
 	return (
 		<Styled>
 			<Container>
-				<Button>navbtn</Button>
+				<Button>
+					<CgMenuLeft />
+				</Button>
 				<Button>switch</Button>
 			</Container>
 		</Styled>
