@@ -12,6 +12,9 @@ export const NavLinks = styled.nav(_props => ({
 		transform: "translateX(-50%)",
 		flexDirection: "row",
 		gap: 10,
+		padding: "0 40px",
+		borderRadius: 30,
+		background: "linear-gradient(25deg, transparent, rgba(255, 255, 255, 0.1), transparent)",
 	},
 }));
 
@@ -58,7 +61,7 @@ export default styled.div<StyledNavBarProps>(props => ({
 		position: "static",
 		zIndex: 0,
 		paddingTop: 0,
-		backgroundColor: "transparent",
+		background: "transparent",
 		flexDirection: "row",
 
 		img: {

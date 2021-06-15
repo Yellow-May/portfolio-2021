@@ -38,10 +38,10 @@ const Header = () => {
 						</Button>
 						<Button
 							variant='link'
-							title='techs'
-							active={active === "techs"}
-							onClick={() => setactivestate("techs")}>
-							Techs. Familiarity
+							title='skills'
+							active={active === "skills"}
+							onClick={() => setactivestate("skills")}>
+							Skills
 						</Button>
 						<Button
 							variant='link'
