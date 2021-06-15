@@ -1,12 +1,14 @@
 import React from "react";
-import GlobalReset from "./styles/global";
+import GlobalCssReset from "./styles/global";
 import Header from "./components/Header";
+import Home from "./components/pages/Home";
 
 const App = () => {
 	return (
 		<>
-			<GlobalReset />
+			<GlobalCssReset />
 			<Header />
+			<Home />
 		</>
 	);
 };
