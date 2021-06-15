@@ -9,7 +9,7 @@ export default styled.header<StyledHeaderProps>(_props => ({
 	boxShadow: "0 1px 5px rgba(0, 0, 0, 1)",
 	position: "relative",
 
-	"div:first-child": {
+	"& > div:first-child": {
 		display: "flex",
 		justifyContent: "space-between",
 	},
