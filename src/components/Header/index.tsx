@@ -13,6 +13,7 @@ import logo from "../../assets/images/mayv2.png";
 const Header = () => {
 	const [switchstate, setswitchstate] = React.useState(false);
 	const [navbarstate, setnavbarstate] = React.useState(false);
+	const [active, setactivestate] = React.useState("home");
 
 	return (
 		<Styled>
@@ -21,10 +22,34 @@ const Header = () => {
 					<img src={logo} alt='yellow may' />
 
 					<NavLinks>
-						<Button variant='link'>Home</Button>
-						<Button variant='link'>About</Button>
-						<Button variant='link'>Techs. Familiarity</Button>
-						<Button variant='link'>Projects</Button>
+						<Button
+							variant='link'
+							title='home'
+							active={active === "home"}
+							onClick={() => setactivestate("home")}>
+							Home
+						</Button>
+						<Button
+							variant='link'
+							title='about'
+							active={active === "about"}
+							onClick={() => setactivestate("about")}>
+							About
+						</Button>
+						<Button
+							variant='link'
+							title='techs'
+							active={active === "techs"}
+							onClick={() => setactivestate("techs")}>
+							Techs. Familiarity
+						</Button>
+						<Button
+							variant='link'
+							title='projects'
+							active={active === "projects"}
+							onClick={() => setactivestate("projects")}>
+							Projects
+						</Button>
 					</NavLinks>
 
 					<Socials>

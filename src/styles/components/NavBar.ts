@@ -5,6 +5,14 @@ export const NavLinks = styled.nav(_props => ({
 	flexDirection: "column",
 	alignItems: "center",
 	gap: 25,
+
+	"@media (min-width: 640px)": {
+		position: "absolute",
+		left: "50%",
+		transform: "translateX(-50%)",
+		flexDirection: "row",
+		gap: 10,
+	},
 }));
 
 export const Socials = styled.div(_props => ({
@@ -14,6 +22,12 @@ export const Socials = styled.div(_props => ({
 	justifyContent: "center",
 	alignItems: "center",
 	gap: 16,
+
+	"@media (min-width: 640px)": {
+		left: "50%",
+		transform: "translateX(-50%)",
+		position: "fixed",
+	},
 }));
 
 interface StyledNavBarProps {
@@ -42,5 +56,13 @@ export default styled.div<StyledNavBarProps>(props => ({
 
 	"@media (min-width: 640px)": {
 		position: "static",
+		zIndex: 0,
+		paddingTop: 0,
+		backgroundColor: "transparent",
+		flexDirection: "row",
+
+		img: {
+			width: 30,
+		},
 	},
 }));

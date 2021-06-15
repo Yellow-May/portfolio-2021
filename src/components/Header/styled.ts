@@ -13,4 +13,16 @@ export default styled.header<StyledHeaderProps>(_props => ({
 		display: "flex",
 		justifyContent: "space-between",
 	},
+
+	"@media (min-width: 640px)": {
+		padding: "15px 0",
+
+		"& > div:first-child": {
+			gap: 250,
+
+			"& > button": {
+				display: "none",
+			},
+		},
+	},
 }));

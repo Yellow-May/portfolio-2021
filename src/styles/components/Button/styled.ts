@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 interface StyledButtonProps {
-	variant?: "text" | "link" | "icon";
+	variant?: "link" | "text" | "icon";
+	active?: boolean;
 }
 
 export default styled.button<StyledButtonProps>(props => ({
@@ -14,7 +15,7 @@ export default styled.button<StyledButtonProps>(props => ({
 	padding: props.variant === "icon" ? "5px 10px" : "5px 15px",
 	textTransform: props.variant === "link" ? "uppercase" : "unset",
 
-	background: "transparent",
+	background: props.active ? "rgba(217, 217, 217, 0.25)" : "transparent",
 	color: "rgba(255, 255, 255, 1)",
 	borderWidth: props.variant === "link" && "text" ? 0 : 1,
 	borderStyle: props.variant === "icon" ? "outset" : "solid",
