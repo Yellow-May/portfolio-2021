@@ -15,7 +15,7 @@ export default styled.button<StyledButtonProps>(props => ({
 	padding: props.variant === "icon" ? "5px 10px" : "5px 15px",
 	textTransform: props.variant === "link" ? "uppercase" : "unset",
 
-	background: props.active ? "rgba(217, 217, 217, 0.25)" : "transparent",
+	background: props.active ? "rgba(217, 217, 217, 0.125)" : "transparent",
 	color: "rgba(255, 255, 255, 1)",
 	borderWidth: props.variant === "link" && "text" ? 0 : 1,
 	borderStyle: props.variant === "icon" ? "outset" : "solid",
@@ -24,6 +24,6 @@ export default styled.button<StyledButtonProps>(props => ({
 	alignItems: "center",
 
 	"&:hover": {
-		background: "rgba(217, 217, 217, 0.25)",
+		background: "rgba(217, 217, 217, 0.125)",
 	},
 }));

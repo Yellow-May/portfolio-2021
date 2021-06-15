@@ -21,12 +21,8 @@ export default styled.header<StyledHeaderProps>(_props => ({
 	"@media (min-width: 640px)": {
 		padding: "15px 0",
 
-		"& > div:first-child": {
-			gap: 250,
-
-			"& > button": {
-				display: "none",
-			},
+		"& > div:first-child > button": {
+			display: "none",
 		},
 	},
 }));
