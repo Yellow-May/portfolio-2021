@@ -40,9 +40,9 @@ export default styled.div<StyledNavBarProps>(props => ({
 	left: props.mobInView ? 0 : "-100%",
 	width: "80%",
 	height: "100%",
-	backgroundColor: "rgba(70, 70, 70, 1)",
+	background:
+		"linear-gradient(transparent, rgba(255, 255, 255, 0.125), transparent, rgba(0,0,0,0.125))",
 	boxShadow: "1px 0px 5px rgba(35, 35, 35, 1)",
-	zIndex: -1,
 	transition: "0.75s",
 	display: "flex",
 	flexDirection: "column",

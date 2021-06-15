@@ -1,8 +1,8 @@
 import React from "react";
-import Container from "../../../styles/components/Container";
+import Styled from "./styled";
 
 const Home = () => {
-	return <Container as='main'>Home Page</Container>;
+	return <Styled as='main'>Home Page</Styled>;
 };
 
 export default Home;
