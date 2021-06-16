@@ -24,5 +24,9 @@ export default styled.header<StyledHeaderProps>(_props => ({
 		"& > div:first-child > button": {
 			display: "none",
 		},
+
+		"@media (max-height: 480px)": {
+			padding: "10px 0",
+		},
 	},
 }));

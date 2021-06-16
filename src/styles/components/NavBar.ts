@@ -26,10 +26,20 @@ export const Socials = styled.div(_props => ({
 	alignItems: "center",
 	gap: 16,
 
+	button: {
+		fontSize: 20,
+	},
+
 	"@media (min-width: 640px)": {
-		left: "50%",
-		transform: "translateX(-50%)",
+		flexDirection: "column",
+		left: "1vw",
 		position: "fixed",
+	},
+
+	"@media (max-height: 480px)": {
+		button: {
+			fontSize: 16,
+		},
 	},
 }));
 

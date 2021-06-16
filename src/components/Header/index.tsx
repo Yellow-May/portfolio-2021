@@ -54,16 +54,16 @@ const Header = () => {
 
 					<Socials>
 						<Button variant='icon'>
-							<TiSocialLinkedin size={20} />
+							<TiSocialLinkedin />
 						</Button>
 						<Button variant='icon'>
-							<TiSocialGithub size={20} />
+							<TiSocialGithub />
 						</Button>
 						<Button variant='icon'>
-							<TiSocialTwitter size={20} />
+							<TiSocialTwitter />
 						</Button>
 						<Button variant='icon'>
-							<TiMail size={20} />
+							<TiMail />
 						</Button>
 					</Socials>
 				</NavBar>
