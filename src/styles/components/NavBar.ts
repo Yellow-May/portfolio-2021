@@ -49,6 +49,7 @@ interface StyledNavBarProps {
 
 export default styled.div<StyledNavBarProps>(props => ({
 	position: "fixed",
+	zIndex: 1,
 	top: 0,
 	left: props.mobInView ? 0 : "-100%",
 	width: "80%",
@@ -69,7 +70,6 @@ export default styled.div<StyledNavBarProps>(props => ({
 
 	"@media (min-width: 640px)": {
 		position: "static",
-		zIndex: 0,
 		paddingTop: 0,
 		background: "transparent",
 		flexDirection: "row",

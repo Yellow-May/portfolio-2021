@@ -22,6 +22,7 @@ export default styled.button<StyledButtonProps>(props => ({
 
 	display: "flex",
 	alignItems: "center",
+	gap: 10,
 
 	"&:hover": {
 		background: "rgba(217, 217, 217, 0.125)",

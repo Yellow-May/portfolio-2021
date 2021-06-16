@@ -8,7 +8,6 @@ export default createGlobalStyle(_props => ({
 	},
 
 	body: {
-		// position: "relative",
 		backgroundColor: "rgba(52, 52, 52, 1)",
 
 		"#root": {
@@ -18,7 +17,6 @@ export default createGlobalStyle(_props => ({
 		main: {
 			minHeight: "90vh",
 			position: "relative",
-			zIndex: -2,
 			display: "flex",
 		},
 	},
