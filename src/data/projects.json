@@ -1,0 +1,163 @@
+[
+	{
+		"name": "BOOTSTRAP REST COUNTRIES API",
+		"imgPath": "",
+		"sitePath": "https://bootstrap-rest-countries-api.vercel.app/",
+		"repoPath": "https://github.com/Yellow-May/bootstrap-rest-countries-api",
+		"categories": {
+			"jsframework": "REACTJS",
+			"cssframework": "BOOTSTRAP",
+			"libraries": [
+				"FONTAWESOME",
+				"NODE-SASS",
+				"REACT-BOOTSTRAP",
+				"REACT HOOKSS",
+				"REACT-ROUTER-DOM"
+			],
+			"technologies": ["TYPESCRIPT"]
+		}
+	},
+	{
+		"name": "CALCULATOR APP WITH THEME CHANGER (FRONTEND MENTOR CHALLENGE)",
+		"imgPath": "",
+		"sitePath": "https://frontend-mentor-calculator-app.vercel.app/",
+		"repoPath": "https://github.com/Yellow-May/Frontend-Mentor-Calculator-app",
+		"categories": {
+			"jsframework": null,
+			"cssframework": null,
+			"libraries": null,
+			"technologies": ["HTML", "SASS", "TYPESCRIPT"]
+		}
+	},
+	{
+		"name": "LOOPSTUDIOS LANDING PAGE (FRONTEND MENTOR CHALLENGE)",
+		"imgPath": "",
+		"sitePath": "https://frontend-mentor-loopstudios-landing-page-six.vercel.app/",
+		"repoPath": "https://github.com/Yellow-May/Frontend-Mentor-Loopstudios-landing-page",
+		"categories": {
+			"jsframework": null,
+			"cssframework": null,
+			"libraries": null,
+			"technologies": ["HTML", "SASS", "TYPESCRIPT"]
+		}
+	},
+	{
+		"name": "MATERIALUI REST COUNTRIES API WITH THEME CHANGER (FRONTEND MENTOR CHALLENGE)",
+		"imgPath": "",
+		"sitePath": "https://frontend-mentor-rest-countries-api-with-color-theme-switcher.vercel.app/",
+		"repoPath": "https://github.com/Yellow-May/Frontend-Mentor-rest-countries-api-with-color-theme-switcher",
+		"categories": {
+			"jsframework": "REACTJS",
+			"cssframework": "MATERIAL-UI",
+			"libraries": ["MATERIALUI/CORE", "MATERIALUI/ICON", "REACT HOOKSS", "REACT-ROUTER-DOM"],
+			"technologies": ["TYPESCRIPT"]
+		}
+	},
+	{
+		"name": "NETFLIX LANDING PAGE CLONE",
+		"imgPath": "",
+		"sitePath": "https://netflix-yellow-may.netlify.app/",
+		"repoPath": "https://github.com/Yellow-May/Netflix-Clone",
+		"categories": {
+			"jsframework": null,
+			"cssframework": null,
+			"libraries": null,
+			"technologies": ["HTML", "CSS", "JAVASCRIPT"]
+		}
+	},
+	{
+		"name": "POMODORO TIMER COUNTER APP",
+		"imgPath": "",
+		"sitePath": "https://pomodoro-timer-counter.vercel.app/",
+		"repoPath": "https://github.com/Yellow-May/pomodoro-timer-counter",
+		"categories": {
+			"jsframework": "REACTJS",
+			"cssframework": null,
+			"libraries": ["NODE-SASS"],
+			"technologies": ["TYPESCRIPT"]
+		}
+	},
+	{
+		"name": "REACT SHOPPING APP VERSON 2.0.0",
+		"imgPath": "",
+		"sitePath": "https://shop-app-ymay.netlify.app/",
+		"repoPath": "https://github.com/Yellow-May/react-shopping-app",
+		"categories": {
+			"jsframework": "REACTJS",
+			"cssframework": null,
+			"libraries": ["REACT-ROUTER-DOM"],
+			"technologies": ["JAVASCRIPT"]
+		}
+	},
+	{
+		"name": "ROCK PAPER SCISSORS APP (FRONTEND MENTOR CHALLENGE)",
+		"imgPath": "",
+		"sitePath": "https://frontend-mentor-rock-paper-scissors-rho.vercel.app/",
+		"repoPath": "https://github.com/Yellow-May/Frontend-Mentor-rock-paper-scissors",
+		"categories": {
+			"jsframework": "REACTJS",
+			"cssframework": null,
+			"libraries": ["NODE-SASS"],
+			"technologies": ["TYPESCRIPT"]
+		}
+	},
+	{
+		"name": "STATIC JOB LISTINGS APP (FRONTEND MENTOR CHALLENGE)",
+		"imgPath": "",
+		"sitePath": "https://static-job-listings-react-frontendmentor.vercel.app/",
+		"repoPath": "https://github.com/Yellow-May/static-job-listings-react-frontendmentor",
+		"categories": {
+			"jsframework": "REACTJS",
+			"cssframework": null,
+			"libraries": null,
+			"technologies": ["JAVASCRIPT"]
+		}
+	},
+	{
+		"name": "TODO APP WITH FILTERS AND THEME CHANGER (FRONTEND MENTOR CHALLENGE)",
+		"imgPath": "",
+		"sitePath": "https://react-redux-todo-app-with-theme-changer.vercel.app/",
+		"repoPath": "https://github.com/Yellow-May/React_Redux_Todo_App_With_Theme_Changer",
+		"categories": {
+			"jsframework": "REACTJS",
+			"cssframework": null,
+			"libraries": ["STYLED-COMPONENTS", "REDUX", "REACT-REDUX", "UUID"],
+			"technologies": ["TYPESCRIPT"]
+		}
+	},
+	{
+		"name": "TV SHOW API SEARCH APP",
+		"imgPath": "",
+		"sitePath": "https://series-search.netlify.app/",
+		"repoPath": "https://github.com/Yellow-May/TV-Shows-search-site",
+		"categories": {
+			"jsframework": null,
+			"cssframework": null,
+			"libraries": null,
+			"technologies": ["HTML", "CSS", "JAVASCRIPT"]
+		}
+	},
+	{
+		"name": "TWITTER LANDING PAGE CLONE",
+		"imgPath": "",
+		"sitePath": "https://cranky-easley-0349f0.netlify.app/",
+		"repoPath": "https://github.com/Yellow-May/Twitter-Landing-Page-Clone",
+		"categories": {
+			"jsframework": null,
+			"cssframework": null,
+			"libraries": null,
+			"technologies": ["HTML", "SASS", "TYPESCRIPT"]
+		}
+	},
+	{
+		"name": "URL SHORTENING APP WITH SIGN AND LOGIN FEATURE (FRONTEND MENTOR CHALLENGE)",
+		"imgPath": "",
+		"sitePath": "https://frontend-mentor-url-shortening-api.vercel.app/",
+		"repoPath": "https://github.com/Yellow-May/Frontend-Mentor-URL-Shortening_Api",
+		"categories": {
+			"jsframework": "REACTJS",
+			"libraries": ["NODE-SASS", "REACT HOOKS", "REACT-COPY-TO-CLIPBOARD"],
+			"technologies": ["TYPESCRIPT"]
+		}
+	}
+]

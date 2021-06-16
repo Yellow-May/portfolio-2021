@@ -1,0 +1,19 @@
+{
+	"jsFrameworks": ["REACTJS"],
+	"cssFrameworks": ["BOOTSTRAP", "MATERIAL-UI"],
+	"libraries": [
+		"FONTAWESOME",
+		"MATERIALUI/CORE",
+		"MATERIALUI/ICON",
+		"NODE-SASS",
+		"REACT-BOOTSTRAP",
+		"REACT-COPY-TO-CLIPBOARD",
+		"REACT HOOKS",
+		"REACT-ROUTER-DOM",
+		"REACT-REDUX",
+		"REDUX",
+		"STYLED-COMPONENTS",
+		"UUID"
+	],
+	"technologies": ["HTML", "CSS", "SASS", "JAVASCRIPT", "TYPESCRIPT"]
+}

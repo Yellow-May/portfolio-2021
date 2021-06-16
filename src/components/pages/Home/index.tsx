@@ -13,8 +13,10 @@ const Home = () => {
 						Go <CgArrowRight />
 					</Button>
 				</Section.Header>
+
 				<Section.Content></Section.Content>
 			</Section.Wrapper>
+
 			<Section.Wrapper>
 				<Section.Header>
 					<h1>Skills</h1>
@@ -22,7 +24,10 @@ const Home = () => {
 						Go <CgArrowRight />
 					</Button>
 				</Section.Header>
+
+				<Section.Content></Section.Content>
 			</Section.Wrapper>
+
 			<Section.Wrapper>
 				<Section.Header>
 					<h1>Projects</h1>
@@ -30,6 +35,8 @@ const Home = () => {
 						Go <CgArrowRight />
 					</Button>
 				</Section.Header>
+
+				<Section.Content></Section.Content>
 			</Section.Wrapper>
 		</StyledContainer>
 	);
