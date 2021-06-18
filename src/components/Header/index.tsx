@@ -1,5 +1,6 @@
 import React from "react";
 import Styled from "./styled";
+import { useSwipeable } from "react-swipeable";
 import Container from "../../styles/components/Container";
 import NavBar, { NavLinks, Socials } from "../../styles/components/NavBar";
 import Button from "../../styles/components/Button";
@@ -15,10 +16,18 @@ const Header = () => {
 	const [navbarstate, setnavbarstate] = React.useState(false);
 	const [active, setactivestate] = React.useState("home");
 
+	const closeNavBar = useSwipeable({
+		onSwipedLeft: () => setnavbarstate(false),
+	});
+
+	const openNavBar = useSwipeable({
+		onSwipedRight: () => setnavbarstate(true),
+	});
+
 	return (
-		<Styled>
+		<Styled {...openNavBar}>
 			<Container>
-				<NavBar mobInView={navbarstate}>
+				<NavBar mobInView={navbarstate} {...closeNavBar}>
 					<img src={logo} alt='yellow may' />
 
 					<NavLinks>

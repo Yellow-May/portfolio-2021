@@ -52,7 +52,7 @@ export default styled.div<StyledNavBarProps>(props => ({
 	zIndex: 1,
 	top: 0,
 	left: props.mobInView ? 0 : "-100%",
-	width: "80%",
+	width: "90%",
 	height: "100%",
 	background:
 		"linear-gradient(25deg, rgba(0, 0, 0, 0.75) 20%, transparent, rgba(255, 255, 255, 0.25), transparent 80%)",
