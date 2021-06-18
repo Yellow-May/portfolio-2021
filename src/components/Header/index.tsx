@@ -1,6 +1,8 @@
 import React from "react";
-import Styled from "./styled";
 import { useSwipeable } from "react-swipeable";
+import { useHistory } from "react-router-dom";
+
+import Styled from "./styled";
 import Container from "../../styles/components/Container";
 import NavBar, { NavLinks, Socials } from "../../styles/components/NavBar";
 import Button from "../../styles/components/Button";
@@ -19,6 +21,8 @@ const Header = () => {
 	const [navbarstate, setnavbarstate] = React.useState(false);
 	const [active, setactivestate] = React.useState("home");
 
+	const { push } = useHistory();
+
 	const closeNavBar = useSwipeable({
 		onSwipedLeft: () => setnavbarstate(false),
 	});
@@ -36,7 +40,11 @@ const Header = () => {
 								variant='link'
 								title={link}
 								active={active === link}
-								onClick={() => setactivestate(link)}>
+								onClick={() => {
+									setactivestate(link);
+									link !== "Contact Me" &&
+										(link === "Home" ? push("/") : push(`/${link}`));
+								}}>
 								{link}
 							</Button>
 						))}
