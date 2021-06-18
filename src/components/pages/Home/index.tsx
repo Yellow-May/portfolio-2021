@@ -5,7 +5,6 @@ import Button from "../../../styles/components/Button";
 import { CgArrowRight } from "react-icons/cg";
 
 import projects from "../../../data/projects.json";
-import skills from "../../../data/skills.json";
 import profile from "../../../assets/images/profile.jpg";
 
 const Home = () => {
@@ -13,32 +12,17 @@ const Home = () => {
 		<StyledContainer as='main'>
 			<Section.Wrapper>
 				<Section.Header>
-					<h1>About</h1>
+					<h1>Profile</h1>
 					<Button variant='link'>
 						Go <CgArrowRight />
 					</Button>
 				</Section.Header>
 
-				<Content.About>
+				<Content.Profile>
 					<img src={profile} alt='profile' />
-					<div>
-						<h3>Onyekwere Chidiebube Precious</h3>
-						<p>Frontend Web Developer</p>
-					</div>
-				</Content.About>
-			</Section.Wrapper>
-
-			<Section.Wrapper>
-				<Section.Header>
-					<h1>Skills</h1>
-					<Button variant='link'>
-						Go <CgArrowRight />
-					</Button>
-				</Section.Header>
-
-				<Content.Skills>
-					{skills.technologies.map((tech, index) => <li key={index}>{tech}</li>)}
-				</Content.Skills>
+					<h3>Onyekwere Chidiebube Precious</h3>
+					<p>Frontend Web Developer</p>
+				</Content.Profile>
 			</Section.Wrapper>
 
 			<Section.Wrapper>
@@ -52,9 +36,9 @@ const Home = () => {
 				<Content.Projects>
 					{projects.map(
 						(project, index) =>
-							index < 5 && (
+							index < 10 && (
 								<div key={index}>
-									<img src={""} alt={project.name} /> <p>{project.name}</p>
+									<img src={""} alt={""} /> <p>{project.name}</p>
 								</div>
 							)
 					)}

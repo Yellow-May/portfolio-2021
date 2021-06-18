@@ -4,17 +4,20 @@ import Container from "../../../styles/components/Container";
 
 export const Section = {
 	Wrapper: styled.section({
-		boxShadow: "1px 2px 3px rgba(0,0,0,0.4)",
+		boxShadow: "1px 2px 3px rgba(0, 0, 0, 0.25)",
 		overflow: "hidden",
 		borderRadius: 5,
 	}),
 
 	Header: styled.header({
+		height: "15%",
 		display: "flex",
 		justifyContent: "space-between",
 		alignItems: "center",
 		padding: 5,
-		backgroundColor: "rgba(45, 45, 45, 1)",
+		paddingLeft: 10,
+		background:
+			"linear-gradient(65deg, rgba(35, 35, 35, 1), rgba(45, 45, 45, 1), rgba(35, 35, 35, 1))",
 		color: "rgba(217, 217, 217, 1)",
 
 		h1: {
@@ -25,105 +28,65 @@ export const Section = {
 		button: {
 			fontSize: 12,
 		},
-
-		"@media (min-width: 1024px)": {
-			padding: 10,
-
-			h1: {
-				fontSize: 22,
-			},
-
-			button: {
-				fontSize: 15,
-			},
-		},
 	}),
 
 	Content: styled.div({
-		height: "82%",
+		height: "85%",
 		overflowX: "auto",
 		overflowY: "hidden",
 		padding: "0 10px",
-		backgroundColor: "rgba(70,70,70,1)",
+		backgroundColor: "rgba(72, 72, 72, 1)",
+		alignItems: "center",
 	}),
 };
 
 export const Content = {
-	About: styled(Section.Content)({
-		display: "flex",
-		justifyContent: "center",
-		alignItems: "center",
-		gap: 20,
-
-		img: {
-			width: 100,
-			height: 100,
-			borderRadius: "10%",
-			boxShadow: "2px 2px 3px 1px rgba(255, 255, 255, 0.125)",
-		},
-
-		div: {
-			h3: {
-				fontSize: 16,
-				marginBottom: 10,
-			},
-
-			p: {
-				fontSize: 14,
-			},
-
-			"@media (min-width: 640px)": {
-				h3: {
-					fontSize: 20,
-				},
-
-				p: {
-					fontSize: 16,
-				},
-			},
-		},
-
-		"@media (min-width: 1024px)": {
-			img: {
-				width: 175,
-				height: 175,
-			},
-		},
-
-		"@media (min-height: 960px)": {
-			img: {
-				width: 175,
-				height: 175,
-			},
-		},
-	}),
-
-	Skills: styled(Section.Content)({
+	Profile: styled(Section.Content)({
 		display: "flex",
 		flexDirection: "column",
-		justifyContent: "space-between",
-		padding: 10,
+		justifyContent: "space-evenly",
+		textTransform: "uppercase",
+		letterSpacing: 1,
+		textAlign: "center",
+		padding: 0,
 
-		"@media (min-width: 640px)": {
-			padding: 20,
+		img: {
+			height: "55%",
+			borderRadius: "10%",
+			boxShadow: "2px 2px 3px 2px rgba(5, 5, 5, 0.125)",
 		},
 
-		"@media (min-width: 1024px)": {
-			padding: 30,
+		h3: {
+			fontSize: 16,
+			color: "rgba(217, 217, 217, 1)",
+		},
+
+		p: {
+			fontSize: 12,
+			color: "rgba(165, 165, 165, 1)",
+		},
+
+		"media(min-width: 960px)": {
+			h3: { fontSize: 18 },
+
+			p: { fontSize: 14 },
+		},
+
+		"@media (min-height: 1024px)": {
+			h3: { fontSize: 22 },
+
+			p: { fontSize: 18 },
 		},
 	}),
 
 	Projects: styled(Section.Content)({
-		display: "grid",
-		gridTemplateColumns: "repeat(5, 1fr)",
-		alignItems: "center",
-		gap: 30,
+		display: "flex",
+		gap: 50,
+		paddingLeft: 20,
 
 		div: {
-			minWidth: 100,
-			height: 100,
-			fontSize: 11,
-			color: "rgba(217, 217, 217, 1)",
+			width: 150,
+			height: 150,
 
 			img: {
 				width: "100%",
@@ -131,30 +94,23 @@ export const Content = {
 			},
 
 			p: {
+				fontSize: 12,
+				color: "rgba(165, 165, 165, 1)",
 				padding: "5px 0",
 				overflow: "hidden",
 				textOverflow: "ellipsis",
 				whiteSpace: "nowrap",
 			},
-
-			"@media (min-width: 640px)": {
-				fontSize: 12,
-			},
 		},
 
-		"@media (min-height: 960px)": {
+		"@media (min-height: 1024px)": {
 			div: {
-				minWidth: 175,
-				height: 175,
-			},
-		},
+				width: 225,
+				height: 225,
 
-		"@media (min-width: 1024px)": {
-			gap: 50,
-
-			div: {
-				minWidth: 180,
-				height: 180,
+				p: {
+					fontSize: 18,
+				},
 			},
 		},
 	}),
@@ -162,21 +118,20 @@ export const Content = {
 
 export default styled(Container)(_props => ({
 	display: "grid",
-	gridTemplateRows: "repeat(3, 1fr)",
-	gap: 20,
-	paddingTop: 20,
-	paddingBottom: 10,
+	gridTemplateRows: "1fr 1fr",
+	gap: 40,
+	paddingTop: 40,
+	paddingBottom: 40,
 	position: "relative",
 
 	"@media (max-height: 480px)": {
 		height: "600px",
 	},
 
-	"@media (min-width: 1024px)": {
-		gridTemplateRows: "1fr 1fr",
+	"@media (min-width: 640px)": {
 		gridTemplateColumns: "1fr 1fr",
 
-		"section:nth-child(3)": {
+		"section:nth-child(2)": {
 			gridColumn: "span 2",
 		},
 	},

@@ -11,6 +11,9 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import { TiSocialGithub, TiSocialLinkedin, TiSocialTwitter, TiMail } from "react-icons/ti";
 import logo from "../../assets/images/mayv2.png";
 
+const links = ["Home", "Profile", "Projects", "Contact Me"];
+const socials = [<TiSocialLinkedin />, <TiSocialGithub />, <TiSocialTwitter />, <TiMail />];
+
 const Header = () => {
 	const [switchstate, setswitchstate] = React.useState(false);
 	const [navbarstate, setnavbarstate] = React.useState(false);
@@ -20,60 +23,31 @@ const Header = () => {
 		onSwipedLeft: () => setnavbarstate(false),
 	});
 
-	const openNavBar = useSwipeable({
-		onSwipedRight: () => setnavbarstate(true),
-	});
-
 	return (
-		<Styled {...openNavBar}>
+		<Styled>
 			<Container>
 				<NavBar mobInView={navbarstate} {...closeNavBar}>
 					<img src={logo} alt='yellow may' />
 
 					<NavLinks>
-						<Button
-							variant='link'
-							title='home'
-							active={active === "home"}
-							onClick={() => setactivestate("home")}>
-							Home
-						</Button>
-						<Button
-							variant='link'
-							title='about'
-							active={active === "about"}
-							onClick={() => setactivestate("about")}>
-							About
-						</Button>
-						<Button
-							variant='link'
-							title='skills'
-							active={active === "skills"}
-							onClick={() => setactivestate("skills")}>
-							Skills
-						</Button>
-						<Button
-							variant='link'
-							title='projects'
-							active={active === "projects"}
-							onClick={() => setactivestate("projects")}>
-							Projects
-						</Button>
+						{links.map((link, index) => (
+							<Button
+								key={index}
+								variant='link'
+								title={link}
+								active={active === link}
+								onClick={() => setactivestate(link)}>
+								{link}
+							</Button>
+						))}
 					</NavLinks>
 
 					<Socials>
-						<Button variant='icon'>
-							<TiSocialLinkedin />
-						</Button>
-						<Button variant='icon'>
-							<TiSocialGithub />
-						</Button>
-						<Button variant='icon'>
-							<TiSocialTwitter />
-						</Button>
-						<Button variant='icon'>
-							<TiMail />
-						</Button>
+						{socials.map((social, index) => (
+							<Button key={index} variant='icon'>
+								{social}
+							</Button>
+						))}
 					</Socials>
 				</NavBar>
 

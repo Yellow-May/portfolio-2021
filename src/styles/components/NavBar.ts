@@ -54,8 +54,7 @@ export default styled.div<StyledNavBarProps>(props => ({
 	left: props.mobInView ? 0 : "-100%",
 	width: "90%",
 	height: "100%",
-	background:
-		"linear-gradient(25deg, rgba(0, 0, 0, 0.75) 20%, transparent, rgba(255, 255, 255, 0.25), transparent 80%)",
+	background: "linear-gradient(25deg, transparent, rgba(0, 0, 0, 1), transparent)",
 	boxShadow: "1px 0px 5px rgba(35, 35, 35, 1)",
 	transition: "0.75s",
 	display: "flex",
