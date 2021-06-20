@@ -5,6 +5,7 @@ import Button from "../../../styles/components/Button";
 
 import { CgArrowRight } from "react-icons/cg";
 import projects from "../../../data/projects.json";
+import { imgs } from "../Projects/data";
 import profile from "../../../assets/images/profile.jpg";
 
 const Home = () => {
@@ -40,7 +41,7 @@ const Home = () => {
 						(project, index) =>
 							index < 10 && (
 								<div key={index}>
-									<img src={""} alt={""} /> <p>{project.name}</p>
+									<img src={imgs[index]} alt={project.name} /> <p>{project.name}</p>
 								</div>
 							)
 					)}
