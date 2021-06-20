@@ -85,7 +85,6 @@ export const Content = {
 		paddingLeft: 20,
 
 		div: {
-			width: 150,
 			height: 150,
 
 			img: {
