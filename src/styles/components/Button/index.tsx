@@ -8,6 +8,7 @@ interface ButtonProps {
 	active?: boolean;
 	as?: any;
 	href?: string;
+	floater?: "bottom-right";
 }
 
 const Button: React.FC<ButtonProps> = props => {
@@ -19,6 +20,7 @@ const Button: React.FC<ButtonProps> = props => {
 			onClick={props.onClick}
 			title={props.title || undefined}
 			variant={props.variant}
+			floater={props.floater}
 			active={props.active}>
 			{props.children}
 		</Styled>

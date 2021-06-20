@@ -3,14 +3,19 @@ import styled from "styled-components";
 interface StyledButtonProps {
 	variant?: "link" | "text" | "icon";
 	active?: boolean;
+	floater?: "bottom-right";
 }
 
 export default styled.button<StyledButtonProps>(props => ({
 	outline: "none",
 	cursor: "pointer",
 	transition: "0.35s",
-	borderRadius: 5,
-	width: "max-content",
+	width: props.floater ? 45 : "max-content",
+	height: props.floater ? 45 : "",
+	position: props.floater ? "fixed" : "static",
+	bottom: props.floater === "bottom-right" ? 16 : "",
+	right: props.floater === "bottom-right" ? 16 : "",
+	borderRadius: props.floater ? "50%" : 5,
 	fontSize: props.variant === "icon" ? 16 : 13,
 	padding: props.variant === "icon" ? "5px 10px" : "5px 15px",
 	textTransform: props.variant === "link" ? "uppercase" : "unset",
@@ -22,6 +27,7 @@ export default styled.button<StyledButtonProps>(props => ({
 
 	display: "flex",
 	alignItems: "center",
+	justifyContent: "center",
 	gap: 10,
 
 	"&:hover": {

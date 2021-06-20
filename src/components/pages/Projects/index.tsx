@@ -2,7 +2,7 @@ import React from "react";
 import Styled from "./styled";
 import Button from "../../../styles/components/Button";
 
-import { FaAngleRight } from "react-icons/fa";
+import { FaAngleRight, FaAngleUp } from "react-icons/fa";
 import { CgChevronDoubleRight } from "react-icons/cg";
 import projects from "../../../data/projects.json";
 import { filters, imgs } from "./data";
@@ -85,6 +85,13 @@ const Projects = () => {
 					</Styled.DataCard>
 				))}
 			</Styled.DataArea>
+
+			<Button
+				variant='icon'
+				floater='bottom-right'
+				onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+				<FaAngleUp />
+			</Button>
 		</Styled.Wrapper>
 	);
 };

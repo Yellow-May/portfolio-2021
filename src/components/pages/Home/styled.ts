@@ -85,6 +85,7 @@ export const Content = {
 		paddingLeft: 20,
 
 		div: {
+			minWidth: 220,
 			height: 150,
 
 			img: {
@@ -104,12 +105,16 @@ export const Content = {
 
 		"@media (min-height: 1024px)": {
 			div: {
-				width: 225,
-				height: 225,
-
 				p: {
 					fontSize: 18,
 				},
+			},
+		},
+
+		"@media (min-height: 800px)": {
+			div: {
+				minWidth: 275,
+				height: 175,
 			},
 		},
 	}),
