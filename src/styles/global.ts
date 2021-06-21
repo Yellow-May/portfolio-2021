@@ -14,5 +14,14 @@ export default createGlobalStyle(_props => ({
 		"#root": {
 			minHeight: "100vh",
 		},
+
+		".ReactModal__Overlay": {
+			opacity: 0,
+			transition: "opacity 0.25s ease-in-out",
+
+			"&--after-open": { opacity: 1 },
+
+			"&--before-close": { opacity: 0 },
+		},
 	},
 }));
