@@ -127,7 +127,6 @@ export default styled(Container)(_props => ({
 	gap: 40,
 	paddingTop: 40,
 	paddingBottom: 40,
-	position: "relative",
 
 	"@media (max-height: 480px)": {
 		height: "600px",

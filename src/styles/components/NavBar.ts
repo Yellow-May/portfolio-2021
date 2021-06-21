@@ -54,7 +54,8 @@ export default styled.div<StyledNavBarProps>(props => ({
 	left: props.mobInView ? 0 : "-100%",
 	width: "90%",
 	height: "100%",
-	background: "linear-gradient(25deg, transparent, rgba(0, 0, 0, 1), transparent)",
+	background:
+		"linear-gradient(25deg, rgba(0, 0, 0, 1), transparent, rgba(0, 0, 0, 1), transparent, rgba(0, 0, 0, 1))",
 	boxShadow: "1px 0px 5px rgba(35, 35, 35, 1)",
 	transition: "0.75s",
 	display: "flex",
@@ -63,12 +64,24 @@ export default styled.div<StyledNavBarProps>(props => ({
 	gap: 50,
 	paddingTop: 100,
 
+	"&::before": {
+		content: "''",
+		position: "absolute",
+		zIndex: -1,
+		top: 0,
+		left: 0,
+		width: "110%",
+		height: "100%",
+		background: "linear-gradient(90deg, rgba(0, 0, 0, 0.5), transparent)",
+	},
+
 	img: {
 		width: 80,
 	},
 
 	"@media (min-width: 640px)": {
 		position: "static",
+		zIndex: 0,
 		paddingTop: 0,
 		background: "transparent",
 		flexDirection: "row",

@@ -12,10 +12,6 @@ export default styled.header<StyledHeaderProps>(_props => ({
 	"& > div:first-child": {
 		display: "flex",
 		justifyContent: "space-between",
-
-		"& > button": {
-			zIndex: 10,
-		},
 	},
 
 	"@media (min-width: 640px)": {
