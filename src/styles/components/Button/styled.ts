@@ -25,6 +25,7 @@ export default styled.button<StyledButtonProps>(props => ({
 	borderWidth: props.variant === "link" && "text" ? 0 : 1,
 	borderStyle: props.variant === "icon" ? "outset" : "solid",
 
+	textDecoration: "none",
 	display: "flex",
 	alignItems: "center",
 	justifyContent: "center",

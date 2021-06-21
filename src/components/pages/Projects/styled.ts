@@ -5,13 +5,7 @@ const Styled = {
 	Wrapper: styled(Container)({
 		padding: "30px 0",
 		overflow: "hidden",
-		display: "block",
-		height: "auto",
-		minHeight: "auto",
-
-		"@media (min-height: 1024px)": {
-			maxHeight: "unset",
-		},
+		position: "relative",
 	}),
 
 	Header: styled.h1({

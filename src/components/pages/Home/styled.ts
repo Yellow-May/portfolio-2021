@@ -121,6 +121,7 @@ export const Content = {
 };
 
 export default styled(Container)(_props => ({
+	height: "90vh",
 	display: "grid",
 	gridTemplateRows: "1fr 1fr",
 	gap: 40,
@@ -130,6 +131,10 @@ export default styled(Container)(_props => ({
 
 	"@media (max-height: 480px)": {
 		height: "600px",
+	},
+
+	"@media (min-height: 1024px)": {
+		maxHeight: 960,
 	},
 
 	"@media (min-width: 640px)": {

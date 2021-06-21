@@ -13,15 +13,5 @@ export default createGlobalStyle(_props => ({
 		"#root": {
 			minHeight: "100vh",
 		},
-
-		main: {
-			height: "90vh",
-			position: "relative",
-			display: "flex",
-
-			"@media (min-height: 1024px)": {
-				maxHeight: 960,
-			},
-		},
 	},
 }));
