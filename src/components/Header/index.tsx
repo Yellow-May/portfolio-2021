@@ -43,7 +43,7 @@ const Header = () => {
 								onClick={() => {
 									setactivestate(link);
 									link !== "Contact Me" &&
-										(link === "Home" ? push("/") : push(`/${link}`));
+										(link === "Home" ? push("/") : push(`/${link.toLowerCase()}`));
 								}}>
 								{link}
 							</Button>
