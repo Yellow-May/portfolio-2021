@@ -27,7 +27,7 @@ const reducer = (state: InitialStateProps, action: ActionInterfaceProps) => {
 		case Actions.CHANGE_CURRENT_PAGE:
 			return { ...state, currentPage: action.payload || "Home" };
 		case Actions.TOGGLE_THEME:
-			return { ...state, themeDark: !state.themeDark };
+			return { ...state, themeLight: !state.themeLight };
 		default:
 			return state;
 	}

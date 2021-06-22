@@ -1,17 +1,17 @@
 import React from "react";
 import reducer, { ActionInterfaceProps } from "./reducer";
 
-export type CurrentPageTypes = "Home" | "Profile" | "Projects" | "Contact";
+export type CurrentPageTypes = "Home" | "Profile" | "Projects" | "Contact Me";
 
 export interface InitialStateProps {
-	themeDark: boolean;
+	themeLight: boolean;
 	currentPage: CurrentPageTypes;
 	navbarOpen: boolean;
 	contactOpen: boolean;
 }
 
 const initialState: InitialStateProps = {
-	themeDark: true,
+	themeLight: false,
 	currentPage: "Home",
 	navbarOpen: false,
 	contactOpen: false,
