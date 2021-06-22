@@ -1,6 +1,6 @@
 import { CurrentPageTypes, InitialStateProps } from "./store";
 
-export enum ActionsProps {
+export enum Actions {
 	CONTACT_OPEN = "CONTACT_OPEN",
 	CONTACT_CLOSE = "CONTACT_CLOSE",
 	NAVBAR_OPEN = "NAVBAR_OPEN",
@@ -10,23 +10,23 @@ export enum ActionsProps {
 }
 
 export interface ActionInterfaceProps {
-	type: ActionsProps;
+	type: Actions;
 	payload?: CurrentPageTypes;
 }
 
 const reducer = (state: InitialStateProps, action: ActionInterfaceProps) => {
 	switch (action.type) {
-		case ActionsProps.CONTACT_OPEN:
+		case Actions.CONTACT_OPEN:
 			return { ...state, contactOpen: true };
-		case ActionsProps.CONTACT_CLOSE:
+		case Actions.CONTACT_CLOSE:
 			return { ...state, contactOpen: false };
-		case ActionsProps.NAVBAR_OPEN:
+		case Actions.NAVBAR_OPEN:
 			return { ...state, navbarOpen: true };
-		case ActionsProps.NAVBAR_CLOSE:
+		case Actions.NAVBAR_CLOSE:
 			return { ...state, navbarOpen: false };
-		case ActionsProps.CHANGE_CURRENT_PAGE:
+		case Actions.CHANGE_CURRENT_PAGE:
 			return { ...state, currentPage: action.payload || "Home" };
-		case ActionsProps.TOGGLE_THEME:
+		case Actions.TOGGLE_THEME:
 			return { ...state, themeDark: !state.themeDark };
 		default:
 			return state;
