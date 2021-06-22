@@ -5,9 +5,8 @@ import { AppContext } from "../../app/store";
 
 import Styled from "./styled";
 import Container from "../../styles/components/Container";
-import NavBar, { NavLinks, Socials } from "../../styles/components/NavBar";
 import Button from "../../styles/components/Button";
-import Switch from "../../styles/components/Switch";
+import Switch from "./Switch";
 
 import { CgMenuLeft, CgMenuRight } from "react-icons/cg";
 import { FaMoon, FaSun } from "react-icons/fa";
@@ -24,12 +23,12 @@ const Header = () => {
 	const closeNavBar = useSwipeable({ onSwipedLeft: () => setnavbar(false) });
 
 	return (
-		<Styled>
+		<Styled.Wrapper>
 			<Container>
-				<NavBar mobInView={navbarOpen} {...closeNavBar}>
+				<Styled.NavBar mobInView={navbarOpen} {...closeNavBar}>
 					<img src={logo} alt='yellow may' />
 
-					<NavLinks>
+					<Styled.NavLinks>
 						{links.map((link, index) => (
 							<Button
 								key={index}
@@ -53,16 +52,16 @@ const Header = () => {
 							}}>
 							Contact Me
 						</Button>
-					</NavLinks>
+					</Styled.NavLinks>
 
-					<Socials>
+					<Styled.Socials>
 						{socials.map((Social, index) => (
 							<Button key={index} as='a' href={Social.link} variant='icon'>
 								<Social.Fc />
 							</Button>
 						))}
-					</Socials>
-				</NavBar>
+					</Styled.Socials>
+				</Styled.NavBar>
 
 				<Button onClick={() => setnavbar(true)} title='nav button' variant='icon'>
 					{navbarOpen ? <CgMenuRight /> : <CgMenuLeft />}
@@ -75,7 +74,7 @@ const Header = () => {
 					rightIcon={FaSun}
 				/>
 			</Container>
-		</Styled>
+		</Styled.Wrapper>
 	);
 };
 

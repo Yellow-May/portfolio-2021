@@ -120,7 +120,7 @@ export const Content = {
 	}),
 };
 
-export default styled(Container)(_props => ({
+export default styled(Container)({
 	height: "90vh",
 	display: "grid",
 	gridTemplateRows: "1fr 1fr",
@@ -143,4 +143,4 @@ export default styled(Container)(_props => ({
 			gridColumn: "span 2",
 		},
 	},
-}));
+});
