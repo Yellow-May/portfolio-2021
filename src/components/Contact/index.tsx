@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
+import { AppContext } from "../../app/store";
 import Button from "../../styles/components/Button";
 
 Modal.setAppElement("#root");
@@ -16,26 +17,20 @@ const customStyles = {
 	},
 };
 
-const Contact = () => {
-	const [open, setopen] = React.useState(false);
-	const openModal = () => setopen(true);
-	const closeModal = () => setopen(false);
+const ContactModal = () => {
+	const { state, actions } = React.useContext(AppContext);
 
 	return (
-		<div>
-			<Button onClick={openModal}>Open Modal</Button>
-
-			<Modal
-				isOpen={open}
-				onRequestClose={closeModal}
-				shouldCloseOnOverlayClick={true}
-				closeTimeoutMS={1000}
-				style={customStyles}
-				contentLabel='Testing'>
-				<Button onClick={closeModal}>Close Modal</Button>
-			</Modal>
-		</div>
+		<Modal
+			isOpen={state.contactOpen}
+			onRequestClose={actions.closeContact}
+			shouldCloseOnOverlayClick={true}
+			closeTimeoutMS={1000}
+			style={customStyles}
+			contentLabel='Testing'>
+			<Button onClick={actions.closeContact}>Close Modal</Button>
+		</Modal>
 	);
 };
 
-export default Contact;
+export default ContactModal;
