@@ -63,6 +63,7 @@ export default styled.div<StyledNavBarProps>(props => ({
 	alignItems: "center",
 	gap: 50,
 	paddingTop: 100,
+	overflow: "hidden",
 
 	"&::before": {
 		content: "''",
@@ -85,6 +86,8 @@ export default styled.div<StyledNavBarProps>(props => ({
 		paddingTop: 0,
 		background: "transparent",
 		flexDirection: "row",
+
+		"&::before": { content: "none" },
 
 		img: {
 			width: 30,

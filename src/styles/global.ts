@@ -9,7 +9,6 @@ export default createGlobalStyle(_props => ({
 
 	body: {
 		backgroundColor: "rgba(52, 52, 52, 1)",
-		overflow: "hidden",
 
 		"#root": {
 			minHeight: "100vh",
