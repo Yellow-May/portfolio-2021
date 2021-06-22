@@ -1,6 +1,8 @@
 import React from "react";
 import { useSwipeable } from "react-swipeable";
 import { useHistory } from "react-router-dom";
+import { AppContext, CurrentPageTypes } from "../../app/store";
+import { Actions } from "../../app/reducer";
 
 import Styled from "./styled";
 import Container from "../../styles/components/Container";
@@ -13,24 +15,23 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import { TiSocialGithub, TiSocialLinkedin, TiSocialTwitter, TiMail } from "react-icons/ti";
 import logo from "../../assets/images/mayv2.png";
 
-const links = ["Home", "Profile", "Projects", "Contact Me"];
+const links: CurrentPageTypes[] = ["Home", "Profile", "Projects"];
 const socials = [<TiSocialLinkedin />, <TiSocialGithub />, <TiSocialTwitter />, <TiMail />];
 
 const Header = () => {
-	const [switchstate, setswitchstate] = React.useState(false);
-	const [navbarstate, setnavbarstate] = React.useState(false);
-	const [active, setactivestate] = React.useState("home");
+	const { state, dispatch } = React.useContext(AppContext);
+	const { currentPage, navbarOpen, themeLight } = state;
 
 	const { push } = useHistory();
 
 	const closeNavBar = useSwipeable({
-		onSwipedLeft: () => setnavbarstate(false),
+		onSwipedLeft: () => dispatch({ type: Actions.NAVBAR_CLOSE }),
 	});
 
 	return (
 		<Styled>
 			<Container>
-				<NavBar mobInView={navbarstate} {...closeNavBar}>
+				<NavBar mobInView={navbarOpen} {...closeNavBar}>
 					<img src={logo} alt='yellow may' />
 
 					<NavLinks>
@@ -39,15 +40,17 @@ const Header = () => {
 								key={index}
 								variant='link'
 								title={link}
-								active={active === link}
+								active={currentPage === link}
 								onClick={() => {
-									setactivestate(link);
-									link !== "Contact Me" &&
-										(link === "Home" ? push("/") : push(`/${link.toLowerCase()}`));
+									dispatch({ type: Actions.CHANGE_CURRENT_PAGE, payload: link });
+									link === "Home" ? push("/") : push(`/${link.toLowerCase()}`);
 								}}>
 								{link}
 							</Button>
 						))}
+						<Button variant='link' title='Contact Me'>
+							Contact Me
+						</Button>
 					</NavLinks>
 
 					<Socials>
@@ -59,13 +62,16 @@ const Header = () => {
 					</Socials>
 				</NavBar>
 
-				<Button onClick={() => setnavbarstate(prev => !prev)} title='nav button' variant='icon'>
-					{navbarstate ? <CgMenuRight /> : <CgMenuLeft />}
+				<Button
+					onClick={() => dispatch({ type: Actions.NAVBAR_OPEN })}
+					title='nav button'
+					variant='icon'>
+					{navbarOpen ? <CgMenuRight /> : <CgMenuLeft />}
 				</Button>
 
 				<Switch
-					checked={switchstate}
-					onClick={() => setswitchstate(prev => !prev)}
+					checked={themeLight}
+					onClick={() => dispatch({ type: Actions.TOGGLE_THEME })}
 					leftIcon={FaMoon}
 					rightIcon={FaSun}
 				/>

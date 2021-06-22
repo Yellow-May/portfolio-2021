@@ -1,7 +1,7 @@
 import React from "react";
 import reducer, { ActionInterfaceProps } from "./reducer";
 
-export type CurrentPageTypes = "Home" | "Profile" | "Projects" | "Contact Me";
+export type CurrentPageTypes = "Home" | "Profile" | "Projects";
 
 export interface InitialStateProps {
 	themeLight: boolean;
