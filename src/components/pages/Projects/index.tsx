@@ -89,6 +89,7 @@ const Projects = () => {
 			<Button
 				variant='icon'
 				floater='bottom-right'
+				title='Back to Top'
 				onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
 				<FaAngleUp />
 			</Button>

@@ -55,7 +55,11 @@ const Header = () => {
 
 					<Socials>
 						{socials.map((social, index) => (
-							<Button key={index} variant='icon'>
+							<Button
+								key={index}
+								variant='icon'
+								title='Open Contact'
+								onClick={() => dispatch({ type: Actions.CONTACT_OPEN })}>
 								{social}
 							</Button>
 						))}

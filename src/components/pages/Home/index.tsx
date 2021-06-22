@@ -1,14 +1,18 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { AppContext } from "../../../app/store";
+import { Actions } from "../../../app/reducer";
+
 import StyledContainer, { Section, Content } from "./styled";
 import Button from "../../../styles/components/Button";
 
 import { CgArrowRight } from "react-icons/cg";
 import projects from "../../../data/projects.json";
-import { imgs } from "../Projects/data";
 import profile from "../../../assets/images/profile.jpg";
+import { imgs } from "../Projects/data";
 
 const Home = () => {
+	const { dispatch } = React.useContext(AppContext);
 	const { push } = useHistory();
 
 	return (
@@ -16,7 +20,13 @@ const Home = () => {
 			<Section.Wrapper>
 				<Section.Header>
 					<h1>Profile</h1>
-					<Button variant='link' onClick={() => push("/Profile")}>
+					<Button
+						variant='link'
+						title='Goto Profile Page'
+						onClick={() => {
+							push("/profile");
+							dispatch({ type: Actions.CHANGE_CURRENT_PAGE, payload: "Profile" });
+						}}>
 						Go <CgArrowRight />
 					</Button>
 				</Section.Header>
@@ -31,7 +41,13 @@ const Home = () => {
 			<Section.Wrapper>
 				<Section.Header>
 					<h1>Projects</h1>
-					<Button variant='link' onClick={() => push("/Projects")}>
+					<Button
+						variant='link'
+						title='Goto Projects Page'
+						onClick={() => {
+							push("/projects");
+							dispatch({ type: Actions.CHANGE_CURRENT_PAGE, payload: "Projects" });
+						}}>
 						Go <CgArrowRight />
 					</Button>
 				</Section.Header>
