@@ -1,6 +1,5 @@
 import React from "react";
 import { AppContext } from "../../../app/store";
-import { Actions } from "../../../app/reducer";
 
 import Styled from "./styled";
 import Button from "../../../styles/components/Button";
@@ -9,7 +8,7 @@ import profile from "../../../assets/images/profile.jpg";
 import { listitems } from "./data";
 
 const Profile = () => {
-	const { dispatch } = React.useContext(AppContext);
+	const { actions } = React.useContext(AppContext);
 
 	return (
 		<Styled.Wrapper as='main'>
@@ -31,9 +30,7 @@ const Profile = () => {
 			</Styled.Skills>
 			<Styled.Divider></Styled.Divider>
 			<Styled.Text>Contact me for collaborations, contracts and hire</Styled.Text>
-			<Button
-				title='Open Contact Modal'
-				onClick={() => dispatch({ type: Actions.CONTACT_OPEN })}>
+			<Button title='Open Contact Modal' onClick={actions.openContact}>
 				Contact me
 			</Button>
 		</Styled.Wrapper>

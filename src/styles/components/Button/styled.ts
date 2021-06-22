@@ -22,8 +22,12 @@ export default styled.button<StyledButtonProps>(props => ({
 
 	background: props.active ? "rgba(217, 217, 217, 0.125)" : "transparent",
 	color: "rgba(255, 255, 255, 1)",
-	borderWidth: props.variant === "link" && "text" ? 0 : 1,
-	borderStyle: props.variant === "icon" ? "outset" : "solid",
+	borderWidth: props.variant ? 0 : 1,
+	borderStyle: props.variant ? "" : "solid",
+	boxShadow:
+		props.variant === "icon"
+			? "-1px -1px 0px rgba(255, 255, 255, 0.25), 1px 1px 0px rgba(0, 0, 0, 0.125)"
+			: "",
 
 	textDecoration: "none",
 	display: "flex",

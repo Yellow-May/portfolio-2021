@@ -1,7 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { AppContext } from "../../../app/store";
-import { Actions } from "../../../app/reducer";
 
 import StyledContainer, { Section, Content } from "./styled";
 import Button from "../../../styles/components/Button";
@@ -12,7 +11,7 @@ import profile from "../../../assets/images/profile.jpg";
 import { imgs } from "../Projects/data";
 
 const Home = () => {
-	const { dispatch } = React.useContext(AppContext);
+	const { actions } = React.useContext(AppContext);
 	const { push } = useHistory();
 
 	return (
@@ -25,7 +24,7 @@ const Home = () => {
 						title='Goto Profile Page'
 						onClick={() => {
 							push("/profile");
-							dispatch({ type: Actions.CHANGE_CURRENT_PAGE, payload: "Profile" });
+							actions.changeCurrPage("Profile");
 						}}>
 						Go <CgArrowRight />
 					</Button>
@@ -46,7 +45,7 @@ const Home = () => {
 						title='Goto Projects Page'
 						onClick={() => {
 							push("/projects");
-							dispatch({ type: Actions.CHANGE_CURRENT_PAGE, payload: "Projects" });
+							actions.changeCurrPage("Projects");
 						}}>
 						Go <CgArrowRight />
 					</Button>

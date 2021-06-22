@@ -1,5 +1,5 @@
 import React from "react";
-import reducer, { ActionInterfaceProps } from "./reducer";
+import reducer, { ActionTypes } from "./reducer";
 
 export type CurrentPageTypes = "Home" | "Profile" | "Projects";
 
@@ -17,12 +17,30 @@ const initialState: InitialStateProps = {
 	contactOpen: false,
 };
 
+interface ActionsProps {
+	openNav: () => void;
+	closeNav: () => void;
+	openContact: () => void;
+	closeContact: () => void;
+	changeCurrPage: (payload: CurrentPageTypes) => void;
+	toggleTheme: () => void;
+}
+
 export const AppContext = React.createContext(
-	{} as { state: InitialStateProps; dispatch: (value: ActionInterfaceProps) => void }
+	{} as { state: InitialStateProps; actions: ActionsProps }
 );
 
 export const AppProvider: React.FC = ({ children }) => {
 	const [state, dispatch] = React.useReducer(reducer, initialState);
 
-	return <AppContext.Provider value={{ state, dispatch }}> {children} </AppContext.Provider>;
+	const actions: ActionsProps = {
+		openNav: () => dispatch({ type: ActionTypes.NAVBAR_OPEN }),
+		closeNav: () => dispatch({ type: ActionTypes.NAVBAR_CLOSE }),
+		openContact: () => dispatch({ type: ActionTypes.CONTACT_OPEN }),
+		closeContact: () => dispatch({ type: ActionTypes.CONTACT_OPEN }),
+		changeCurrPage: payload => dispatch({ type: ActionTypes.CHANGE_CURRENT_PAGE, payload }),
+		toggleTheme: () => dispatch({ type: ActionTypes.TOGGLE_THEME }),
+	};
+
+	return <AppContext.Provider value={{ state, actions }}> {children} </AppContext.Provider>;
 };
