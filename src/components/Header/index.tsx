@@ -16,11 +16,12 @@ import { links, socials } from "./data";
 
 const Header = () => {
 	const { state, actions } = React.useContext(AppContext);
-	const { currentPage, navbarOpen, themeLight } = state;
+	const { currentPage, themeLight } = state;
+	const [navbarOpen, setnavbar] = React.useState(false);
 
 	const { push } = useHistory();
 
-	const closeNavBar = useSwipeable({ onSwipedLeft: actions.closeNav });
+	const closeNavBar = useSwipeable({ onSwipedLeft: () => setnavbar(false) });
 
 	return (
 		<Styled>
@@ -36,13 +37,20 @@ const Header = () => {
 								title={link}
 								active={currentPage === link}
 								onClick={() => {
-									actions.changeCurrPage(link);
 									link === "Home" ? push("/") : push(`/${link.toLowerCase()}`);
+									actions.changeCurrPage(link);
+									setnavbar(false);
 								}}>
 								{link}
 							</Button>
 						))}
-						<Button variant='link' title='Contact Me'>
+						<Button
+							variant='link'
+							title='Contact Me'
+							onClick={() => {
+								actions.openContact();
+								setnavbar(false);
+							}}>
 							Contact Me
 						</Button>
 					</NavLinks>
@@ -56,7 +64,7 @@ const Header = () => {
 					</Socials>
 				</NavBar>
 
-				<Button onClick={actions.openNav} title='nav button' variant='icon'>
+				<Button onClick={() => setnavbar(true)} title='nav button' variant='icon'>
 					{navbarOpen ? <CgMenuRight /> : <CgMenuLeft />}
 				</Button>
 
