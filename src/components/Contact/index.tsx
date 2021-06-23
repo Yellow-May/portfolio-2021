@@ -1,21 +1,14 @@
 import React from "react";
 import Modal from "react-modal";
 import { AppContext } from "../../app/store";
+
+import Styled from "./styled";
+import ContactForm from "./Form";
 import Button from "../../styles/components/Button";
+import { FaTimes } from "react-icons/fa";
+import { customStyles, details } from "./data";
 
 Modal.setAppElement("#root");
-
-const customStyles = {
-	overlay: {
-		background: "rgba(165, 165, 165, 0.5)",
-	},
-	content: {
-		top: "50%",
-		left: "50%",
-		width: "90%",
-		transform: "translate(-50%, -50%)",
-	},
-};
 
 const ContactModal = () => {
 	const { state, actions } = React.useContext(AppContext);
@@ -28,7 +21,25 @@ const ContactModal = () => {
 			closeTimeoutMS={1000}
 			style={customStyles}
 			contentLabel='Testing'>
-			<Button onClick={actions.closeContact}>Close Modal</Button>
+			<Styled.Wrapper>
+				<Button variant='icon' title='close Contact Modal' handleClick={actions.closeContact}>
+					<FaTimes color='red' />
+				</Button>
+
+				<h1>Contact Details</h1>
+
+				<Styled.Divider></Styled.Divider>
+
+				{details.map((Detail, index) => (
+					<Styled.Detail key={index}>
+						<Detail.Fc size={18} /> <span>{Detail.text}</span>
+					</Styled.Detail>
+				))}
+
+				<Styled.Divider></Styled.Divider>
+
+				<ContactForm />
+			</Styled.Wrapper>
 		</Modal>
 	);
 };

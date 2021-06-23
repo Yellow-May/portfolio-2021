@@ -47,27 +47,27 @@ const Projects = () => {
 			</Styled.Filters>
 
 			<Styled.DataArea>
-				{state.map((data, index) => (
-					<Styled.DataCard key={index}>
+				{state.map(project => (
+					<Styled.DataCard key={project.id}>
 						<Styled.DataCardImg>
-							<img src={imgs[index]} alt={data.name} />
+							<img src={imgs[project.id]} alt={project.name} />
 						</Styled.DataCardImg>
 						<Styled.DataCardContent>
-							<h3>{data.name}</h3>
-							{data.categories.jsframework && (
+							<h3>{project.name}</h3>
+							{project.categories.jsframework && (
 								<p>
-									<span>JS FRAMEWORK:</span> {data.categories.jsframework}
+									<span>JS FRAMEWORK:</span> {project.categories.jsframework}
 								</p>
 							)}
-							{data.categories.cssframework && (
+							{project.categories.cssframework && (
 								<p>
-									<span>CSS FRAMEWORK:</span> {data.categories.cssframework}
+									<span>CSS FRAMEWORK:</span> {project.categories.cssframework}
 								</p>
 							)}
-							{data.categories.technologies && (
+							{project.categories.technologies && (
 								<dl>
 									<dt>TECHS: </dt>
-									{data.categories.technologies.map((e, index) => (
+									{project.categories.technologies.map((e, index) => (
 										<dd key={index}>
 											<CgChevronDoubleRight /> {e}
 										</dd>
@@ -75,10 +75,10 @@ const Projects = () => {
 								</dl>
 							)}
 
-							<Button as='a' href={data.sitePath}>
+							<Button as='a' href={project.sitePath}>
 								Live Site <FaAngleRight />
 							</Button>
-							<Button as='a' href={data.repoPath}>
+							<Button as='a' href={project.repoPath}>
 								Github Repo <FaAngleRight />
 							</Button>
 						</Styled.DataCardContent>

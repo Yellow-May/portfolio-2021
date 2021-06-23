@@ -53,10 +53,10 @@ const Home = () => {
 
 				<Content.Projects>
 					{projects.map(
-						(project, index) =>
-							index < 10 && (
-								<div key={index}>
-									<img src={imgs[index]} alt={project.name} /> <p>{project.name}</p>
+						project =>
+							project.id < 7 && (
+								<div key={project.id}>
+									<img src={imgs[project.id]} alt={project.name} /> <p>{project.name}</p>
 								</div>
 							)
 					)}
