@@ -22,7 +22,7 @@ const Home = () => {
 					<Button
 						variant='link'
 						title='Goto Profile Page'
-						onClick={() => {
+						handleClick={() => {
 							push("/profile");
 							actions.changeCurrPage("Profile");
 						}}>
@@ -43,7 +43,7 @@ const Home = () => {
 					<Button
 						variant='link'
 						title='Goto Projects Page'
-						onClick={() => {
+						handleClick={() => {
 							push("/projects");
 							actions.changeCurrPage("Projects");
 						}}>

@@ -90,7 +90,7 @@ const Projects = () => {
 				variant='icon'
 				floater='bottom-right'
 				title='Back to Top'
-				onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+				handleClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
 				<FaAngleUp />
 			</Button>
 		</Styled.Wrapper>

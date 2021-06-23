@@ -35,7 +35,7 @@ const Header = () => {
 								variant='link'
 								title={link}
 								active={currentPage === link}
-								onClick={() => {
+								handleClick={() => {
 									link === "Home" ? push("/") : push(`/${link.toLowerCase()}`);
 									actions.changeCurrPage(link);
 									setnavbar(false);
@@ -46,7 +46,7 @@ const Header = () => {
 						<Button
 							variant='link'
 							title='Contact Me'
-							onClick={() => {
+							handleClick={() => {
 								actions.openContact();
 								setnavbar(false);
 							}}>
@@ -63,7 +63,7 @@ const Header = () => {
 					</Styled.Socials>
 				</Styled.NavBar>
 
-				<Button onClick={() => setnavbar(true)} title='nav button' variant='icon'>
+				<Button handleClick={() => setnavbar(true)} title='nav button' variant='icon'>
 					{navbarOpen ? <CgMenuRight /> : <CgMenuLeft />}
 				</Button>
 

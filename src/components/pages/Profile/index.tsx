@@ -9,6 +9,7 @@ import { listitems } from "./data";
 
 const Profile = () => {
 	const { actions } = React.useContext(AppContext);
+	const { openContact } = actions;
 
 	return (
 		<Styled.Wrapper as='main'>
@@ -18,6 +19,7 @@ const Profile = () => {
 				Developer/ Designer
 			</Styled.Text>
 			<Styled.Divider></Styled.Divider>
+
 			<Styled.Skills>
 				<h3>Web Dev. Skills</h3>
 				<div>
@@ -28,9 +30,10 @@ const Profile = () => {
 					))}
 				</div>
 			</Styled.Skills>
+
 			<Styled.Divider></Styled.Divider>
 			<Styled.Text>Contact me for collaborations, contracts and hire</Styled.Text>
-			<Button title='Open Contact Modal' onClick={actions.openContact}>
+			<Button title='Open Contact Modal' handleClick={openContact}>
 				Contact me
 			</Button>
 		</Styled.Wrapper>
