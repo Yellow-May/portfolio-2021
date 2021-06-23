@@ -25,4 +25,9 @@ export default styled.form({
 		letterSpacing: 1,
 		fontWeight: 600,
 	},
+
+	"@media (min-width: 960px)": {
+		width: "60%",
+		margin: "auto",
+	},
 });

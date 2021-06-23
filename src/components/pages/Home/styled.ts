@@ -4,7 +4,6 @@ import Container from "../../../styles/components/Container";
 
 export const Section = {
 	Wrapper: styled.section({
-		boxShadow: "1px 2px 3px rgba(0, 0, 0, 0.25)",
 		overflow: "hidden",
 		borderRadius: 5,
 	}),
@@ -17,17 +16,15 @@ export const Section = {
 		padding: 5,
 		paddingLeft: 10,
 		background:
-			"linear-gradient(65deg, rgba(35, 35, 35, 1), rgba(45, 45, 45, 1), rgba(35, 35, 35, 1))",
-		color: "rgba(217, 217, 217, 1)",
+			"linear-gradient(65deg, rgba(21, 21, 21, 1), rgba(35, 35, 35, 1), rgba(21, 21, 21, 1))",
+		color: "rgba(255, 255, 255, 1)",
 
 		h1: {
-			fontSize: 18,
+			fontSize: 17,
 			textTransform: "uppercase",
 		},
 
-		button: {
-			fontSize: 12,
-		},
+		button: { fontSize: 11 },
 	}),
 
 	Content: styled.div({
@@ -35,7 +32,7 @@ export const Section = {
 		overflowX: "auto",
 		overflowY: "hidden",
 		padding: "0 10px",
-		backgroundColor: "rgba(72, 72, 72, 1)",
+		background: "linear-gradient( rgba(32, 32, 32, 0.125), rgba(32, 32, 32, 0.5) )",
 		alignItems: "center",
 	}),
 };
@@ -57,7 +54,7 @@ export const Content = {
 		},
 
 		h3: {
-			fontSize: 16,
+			fontSize: 15,
 			color: "rgba(217, 217, 217, 1)",
 		},
 
@@ -67,15 +64,13 @@ export const Content = {
 		},
 
 		"media(min-width: 960px)": {
-			h3: { fontSize: 18 },
-
-			p: { fontSize: 14 },
+			h3: { fontSize: 16 },
+			p: { fontSize: 13 },
 		},
 
 		"@media (min-height: 1024px)": {
-			h3: { fontSize: 22 },
-
-			p: { fontSize: 18 },
+			h3: { fontSize: 20 },
+			p: { fontSize: 16 },
 		},
 	}),
 
@@ -85,8 +80,17 @@ export const Content = {
 		paddingLeft: 20,
 
 		div: {
-			minWidth: 220,
+			minWidth: 225,
 			height: 150,
+			position: "relative",
+
+			"&::before": {
+				content: "''",
+				position: "absolute",
+				width: "100%",
+				height: 150,
+				background: "rgba(0, 0, 0, 0.125)",
+			},
 
 			img: {
 				width: "100%",
@@ -103,18 +107,25 @@ export const Content = {
 			},
 		},
 
+		"@media (min-width: 960px)": {
+			overflowX: "hidden",
+			overflowY: "auto",
+			flexWrap: "wrap",
+			paddingTop: 20,
+
+			div: { width: 220 },
+		},
+
 		"@media (min-height: 1024px)": {
-			div: {
-				p: {
-					fontSize: 18,
-				},
-			},
+			div: { p: { fontSize: 18 } },
 		},
 
 		"@media (min-height: 800px)": {
 			div: {
 				minWidth: 275,
 				height: 175,
+
+				"&::before": { height: 175 },
 			},
 		},
 	}),
@@ -128,19 +139,13 @@ export default styled(Container)({
 	paddingTop: 40,
 	paddingBottom: 40,
 
-	"@media (max-height: 480px)": {
-		height: "600px",
-	},
+	"@media (max-height: 480px)": { height: 600 },
 
-	"@media (min-height: 1024px)": {
-		maxHeight: 960,
-	},
+	"@media (min-height: 1024px)": { maxHeight: 960 },
 
 	"@media (min-width: 640px)": {
 		gridTemplateColumns: "1fr 1fr",
 
-		"section:nth-child(2)": {
-			gridColumn: "span 2",
-		},
+		"section:nth-child(2)": { gridColumn: "span 2" },
 	},
 });

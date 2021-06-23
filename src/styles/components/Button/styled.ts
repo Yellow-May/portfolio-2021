@@ -20,7 +20,9 @@ export default styled.button<StyledButtonProps>(props => ({
 	padding: props.variant === "icon" ? "5px 10px" : "5px 15px",
 	textTransform: props.variant === "link" ? "uppercase" : "unset",
 
-	background: props.active ? "rgba(217, 217, 217, 0.125)" : "transparent",
+	background: props.active
+		? "linear-gradient(transparent, rgba(217, 217, 217, 0.125))"
+		: "transparent",
 	color: "rgba(255, 255, 255, 1)",
 	borderWidth: props.variant ? 0 : 1,
 	borderStyle: props.variant ? "" : "solid",

@@ -3,9 +3,9 @@ import styled from "styled-components";
 const Styled = {
 	Wrapper: styled.header({
 		padding: "10px 0",
-		backgroundColor: "rgba(35, 35, 35, 1)",
+		background: "linear-gradient(25deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1))",
 		color: "rgba(255, 255, 255, 1)",
-		boxShadow: "0 1px 5px rgba(0, 0, 0, 1)",
+		boxShadow: "0 1px 5px 2px rgba(32, 32, 32, 1)",
 		position: "relative",
 
 		"& > div:first-child": {
@@ -34,7 +34,7 @@ const Styled = {
 		width: "90%",
 		height: "100%",
 		background:
-			"linear-gradient(25deg, rgba(0, 0, 0, 1), transparent, rgba(0, 0, 0, 1), transparent, rgba(0, 0, 0, 1))",
+			"linear-gradient(25deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.375) 10%, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.375) 90%, rgba(0, 0, 0, 1))",
 		boxShadow: "1px 0px 5px rgba(35, 35, 35, 1)",
 		transition: "0.75s",
 		display: "flex",
@@ -64,6 +64,7 @@ const Styled = {
 			zIndex: 0,
 			paddingTop: 0,
 			background: "transparent",
+			boxShadow: "none",
 			flexDirection: "row",
 
 			"&::before": { content: "none" },
@@ -78,7 +79,16 @@ const Styled = {
 		display: "flex",
 		flexDirection: "column",
 		alignItems: "center",
-		gap: 25,
+		gap: 20,
+
+		button: {
+			padding: "10px 25px",
+			borderRadius: 25,
+
+			"&:hover": {
+				background: "linear-gradient(transparent, rgba(217, 217, 217, 0.125))",
+			},
+		},
 
 		"@media (min-width: 640px)": {
 			position: "absolute",
@@ -88,7 +98,7 @@ const Styled = {
 			gap: 10,
 			padding: "0 40px",
 			borderRadius: 30,
-			background: "linear-gradient(25deg, transparent, rgba(255, 255, 255, 0.1), transparent)",
+			background: "linear-gradient(rgba(217, 217, 217, 0.125), transparent)",
 		},
 	}),
 

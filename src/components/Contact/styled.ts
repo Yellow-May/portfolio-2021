@@ -4,7 +4,8 @@ const Styled = {
 	Wrapper: styled.div({
 		width: "100%",
 		minHeight: "100%",
-		background: "rgba(217, 217, 217, 1)",
+		background:
+			"linear-gradient(25deg, rgba(77, 77, 0, 1), rgba(217, 217, 0, 1), rgba(77, 77, 0, 1))",
 		color: "rgba(0, 0, 0, 1)",
 		textAlign: "center",
 		padding: "20px 0",
@@ -15,7 +16,6 @@ const Styled = {
 			right: 0,
 			borderRadius: "none",
 			boxShadow: "none",
-			color: "rgba(0, 0, 0, 1)",
 		},
 
 		h1: {
@@ -23,12 +23,6 @@ const Styled = {
 			marginBottom: 15,
 			letterSpacing: 1,
 			textTransform: "uppercase",
-		},
-
-		"@media (min-width: 960px)": {
-			width: "60%",
-			margin: "auto",
-			borderRadius: "inherit",
 		},
 	}),
 

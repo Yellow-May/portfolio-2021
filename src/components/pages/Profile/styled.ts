@@ -20,6 +20,7 @@ const Styled = {
 	Text: styled.p({
 		fontSize: 16,
 		lineHeight: 2,
+		color: "rgba(255, 255, 255, 1)",
 	}),
 
 	Divider: styled.span({

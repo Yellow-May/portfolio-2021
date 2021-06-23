@@ -8,7 +8,7 @@ export default createGlobalStyle(_props => ({
 	},
 
 	body: {
-		backgroundColor: "rgba(52, 52, 52, 1)",
+		backgroundColor: "rgba(49, 49, 49, 1)",
 
 		"#root": {
 			minHeight: "100vh",

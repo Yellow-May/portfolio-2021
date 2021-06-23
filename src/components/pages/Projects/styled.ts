@@ -51,11 +51,16 @@ const Styled = {
 		display: "grid",
 		gap: 50,
 
-		"@media (min-width: 640px)": { grid: "auto/ 1fr 1fr" },
+		"@media(min-width: 640px)": { gap: 100 },
 	}),
 
 	DataCard: styled.div({
-		boxShadow: "2px 2px 3px rgba(35, 35, 35, 1)",
+		boxShadow: "1px 1px 3px rgba(35, 35, 35, 1)",
+
+		"@media(min-width: 640px)": {
+			display: "grid",
+			gridTemplateColumns: "1fr 1fr",
+		},
 	}),
 
 	DataCardImg: styled.div({
@@ -75,6 +80,14 @@ const Styled = {
 		img: {
 			width: "100%",
 		},
+
+		"@media(min-width: 640px)": {
+			marginBottom: 0,
+			marginRight: 20,
+
+			"&::before": { height: "100%" },
+			img: { height: "100%" },
+		},
 	}),
 
 	DataCardContent: styled.div({
@@ -82,6 +95,7 @@ const Styled = {
 		display: "flex",
 		flexDirection: "column",
 		gap: 15,
+		color: "rgba(217, 217, 0, 1)",
 
 		h3: { fontSize: 18 },
 
@@ -96,6 +110,20 @@ const Styled = {
 				alignItems: "center",
 				marginBottom: 5,
 				fontSize: 12,
+			},
+		},
+
+		"@media(min-width: 640px)": {
+			justifyContent: "space-between",
+
+			h3: { fontSize: 21 },
+
+			p: { fontSize: 16 },
+
+			dl: {
+				dt: { fontSize: 15 },
+
+				dd: { fontSize: 13 },
 			},
 		},
 	}),
