@@ -7,13 +7,15 @@ import Input from "./Input";
 import Button from "../../../styles/components/Button";
 
 const ContactForm = () => {
+	const [formstate, handleSubmit] = useForm("xdopblag");
+
 	const formik = useFormik({
 		initialValues: {
 			email: "",
 			subject: "",
 			message: "",
 		},
-		onSubmit: values => console.log(values),
+		onSubmit: handleSubmit,
 		validationSchema: Yup.object({
 			email: Yup.string().email("Invalid email address").required("Required"),
 			subject: Yup.string().required("Required"),
@@ -21,10 +23,8 @@ const ContactForm = () => {
 		}),
 	});
 
-	const [formstate, handleSubmit] = useForm("xdopblag");
-
 	return (
-		<Styled onSubmit={handleSubmit}>
+		<Styled onSubmit={formik.handleSubmit}>
 			<legend>Send a Message</legend>
 
 			<Input type='email' name='email' labelTxt='E-mail' formik={formik} />
