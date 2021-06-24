@@ -17,25 +17,25 @@ const Styled = {
 		borderRadius: "25%",
 	}),
 
-	Text: styled.p({
+	Text: styled.p(({ theme }) => ({
 		fontSize: 16,
 		lineHeight: 2,
-		color: "rgba(255, 255, 255, 1)",
-	}),
+		color: theme.color.secondary,
+	})),
 
-	Divider: styled.span({
+	Divider: styled.span(({ theme }) => ({
 		width: "100%",
-		margin: "10px",
-		borderBottom: "thin solid rgba(165, 165, 165, 1)",
-	}),
+		margin: "15px",
+		borderBottom: `thin solid ${theme.color.accentII}`,
+	})),
 
-	Skills: styled.div({
+	Skills: styled.div(({ theme }) => ({
 		h3: {
 			fontSize: 21,
 			textTransform: "uppercase",
-			marginBottom: 20,
+			marginBottom: 25,
 			letterSpacing: 1.5,
-			color: "rgba(255, 255, 255, 1)",
+			color: theme.color.secondary,
 		},
 
 		div: {
@@ -45,15 +45,15 @@ const Styled = {
 			gap: 20,
 
 			a: {
-				fontSize: 15,
-				color: "lightblue",
+				fontSize: 14,
+				color: theme.color.primary,
 
 				"&:first-child, &:nth-child(n+6)": {
 					gridColumn: "span 2",
 				},
 			},
 		},
-	}),
+	})),
 };
 
 export default Styled;

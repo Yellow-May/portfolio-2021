@@ -2,30 +2,32 @@ import styled from "styled-components";
 import Container from "../../../styles/components/Container";
 
 const Styled = {
-	Wrapper: styled(Container)({
+	Wrapper: styled(Container)(({ theme }) => ({
 		padding: "30px 0",
 		overflow: "hidden",
-		position: "relative",
-	}),
+		color: theme.color.secondary,
+	})),
 
 	Header: styled.h1({
 		marginBottom: 20,
 		textTransform: "uppercase",
 		letterSpacing: 1.5,
-		fontSize: 20,
+		fontSize: 18,
+
+		"@media (min-width: 768px)": { fontSize: 21 },
 	}),
 
-	Filters: styled.div({
+	Filters: styled.div(({ theme }) => ({
 		display: "flex",
 		alignItems: "center",
 		overflow: "auto",
 		padding: 10,
 		marginBottom: 50,
 		gap: 30,
-		borderBottom: "thin outset rgba(35, 35, 35, 1)",
-	}),
+		borderBottom: `thin solid ${theme.color.accentII}`,
+	})),
 
-	FilterButton: styled.div({
+	FilterButton: styled.div(({ theme }) => ({
 		position: "relative",
 
 		input: {
@@ -35,71 +37,64 @@ const Styled = {
 			cursor: "pointer",
 			opacity: 0,
 
-			"&:checked + span": {
-				color: "rgba(255, 255, 255, 1)",
-			},
+			"&:checked + span": { color: theme.color.primary },
 		},
 
 		span: {
 			textTransform: "uppercase",
-			fontSize: 14,
+			fontSize: 12,
 			whiteSpace: "nowrap",
 		},
-	}),
+
+		"@media (min-width: 768px)": { span: { fontSize: 14 } },
+	})),
 
 	DataArea: styled.div({
 		display: "grid",
-		gap: 50,
+		gap: 80,
 
-		"@media(min-width: 640px)": { gap: 100 },
+		"@media(min-width: 768px)": { gap: 100 },
 	}),
 
-	DataCard: styled.div({
-		boxShadow: "1px 1px 3px rgba(35, 35, 35, 1)",
+	DataCard: styled.div(({ theme }) => ({
+		background: `linear-gradient( transparent, ${theme.color.main}2F )`,
+		boxShadow: `0px 2px 2px ${theme.color.accentII}`,
+		borderRadius: 7,
+		overflow: "hidden",
 
-		"@media(min-width: 640px)": {
+		"@media(min-width: 768px)": {
 			display: "grid",
 			gridTemplateColumns: "1fr 1fr",
 		},
-	}),
+	})),
 
 	DataCardImg: styled.div({
-		position: "relative",
 		marginBottom: 10,
 
-		"&::before": {
-			content: "''",
-			position: "absolute",
-			top: 0,
-			left: 0,
-			width: "100%",
-			height: "98.5%",
-			backgroundColor: "rgba(0, 0, 0, 0.1)",
-		},
+		img: { width: "100%" },
 
-		img: {
-			width: "100%",
-		},
-
-		"@media(min-width: 640px)": {
+		"@media(min-width: 768px)": {
 			marginBottom: 0,
 			marginRight: 20,
 
-			"&::before": { height: "100%" },
 			img: { height: "100%" },
 		},
 	}),
 
-	DataCardContent: styled.div({
+	DataCardContent: styled.div(({ theme }) => ({
 		padding: 10,
 		display: "flex",
 		flexDirection: "column",
 		gap: 15,
-		color: "rgba(217, 217, 0, 1)",
 
-		h3: { fontSize: 18 },
+		h3: { fontSize: 17 },
 
-		p: { fontSize: 14, span: { fontWeight: 600 } },
+		p: {
+			fontSize: 14,
+			color: theme.color.primary,
+
+			span: { fontWeight: 600, color: theme.color.secondary },
+		},
 
 		dl: {
 			dt: { fontSize: 14, fontWeight: 600 },
@@ -110,23 +105,22 @@ const Styled = {
 				alignItems: "center",
 				marginBottom: 5,
 				fontSize: 12,
+				color: theme.color.primary,
 			},
 		},
 
-		"@media(min-width: 640px)": {
+		"@media(min-width: 768px)": {
 			justifyContent: "space-between",
 
-			h3: { fontSize: 21 },
-
+			h3: { fontSize: 20 },
 			p: { fontSize: 16 },
 
 			dl: {
 				dt: { fontSize: 15 },
-
 				dd: { fontSize: 13 },
 			},
 		},
-	}),
+	})),
 };
 
 export default Styled;

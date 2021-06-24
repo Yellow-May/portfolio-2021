@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 const Styled = {
-	Wrapper: styled.header({
+	Wrapper: styled.header(({ theme }) => ({
 		padding: "10px 0",
-		background: "linear-gradient(25deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1))",
-		color: "rgba(255, 255, 255, 1)",
-		boxShadow: "0 1px 5px 2px rgba(32, 32, 32, 1)",
+		background: theme.color.main,
+		color: theme.color.primary,
+		boxShadow: `0 1.5px 1.5px ${theme.color.secondary}3F`,
 		position: "relative",
 
 		"& > div:first-child": {
@@ -13,29 +13,24 @@ const Styled = {
 			justifyContent: "space-between",
 		},
 
-		"@media (min-width: 640px)": {
+		"@media (min-width: 768px)": {
 			padding: "15px 0",
 
-			"& > div:first-child > button": {
-				display: "none",
-			},
+			"& > div:first-child > button": { display: "none" },
 
-			"@media (max-height: 480px)": {
-				padding: "10px 0",
-			},
+			"@media (max-height: 480px)": { padding: "10px 0" },
 		},
-	}),
+	})),
 
-	NavBar: styled.div<{ mobInView: boolean }>(props => ({
+	NavBar: styled.div<{ mobInView: boolean }>(({ theme, mobInView }) => ({
 		position: "fixed",
 		zIndex: 1,
 		top: 0,
-		left: props.mobInView ? 0 : "-100%",
+		left: mobInView ? 0 : "-100%",
 		width: "90%",
 		height: "100%",
-		background:
-			"linear-gradient(25deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.375) 10%, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.375) 90%, rgba(0, 0, 0, 1))",
-		boxShadow: "1px 0px 5px rgba(35, 35, 35, 1)",
+		background: `${theme.color.main}BD`,
+		boxShadow: "inherit",
 		transition: "0.75s",
 		display: "flex",
 		flexDirection: "column",
@@ -44,22 +39,15 @@ const Styled = {
 		paddingTop: 100,
 		overflow: "hidden",
 
-		"&::before": {
-			content: "''",
-			position: "absolute",
-			zIndex: -1,
-			top: 0,
-			left: 0,
-			width: "110%",
-			height: "100%",
-			background: "linear-gradient(90deg, rgba(0, 0, 0, 0.5), transparent)",
+		img: { width: 80 },
+
+		"@media (min-height: 731px)": {
+			gap: 75,
+
+			img: { width: 90 },
 		},
 
-		img: {
-			width: 80,
-		},
-
-		"@media (min-width: 640px)": {
+		"@media (min-width: 768px)": {
 			position: "static",
 			zIndex: 0,
 			paddingTop: 0,
@@ -67,15 +55,11 @@ const Styled = {
 			boxShadow: "none",
 			flexDirection: "row",
 
-			"&::before": { content: "none" },
-
-			img: {
-				width: 30,
-			},
+			img: { width: 30 },
 		},
 	})),
 
-	NavLinks: styled.nav({
+	NavLinks: styled.nav(({ theme }) => ({
 		display: "flex",
 		flexDirection: "column",
 		alignItems: "center",
@@ -84,13 +68,16 @@ const Styled = {
 		button: {
 			padding: "10px 25px",
 			borderRadius: 25,
+			fontWeight: 600,
 
 			"&:hover": {
-				background: "linear-gradient(transparent, rgba(217, 217, 217, 0.125))",
+				background: `linear-gradient(transparent, ${theme.color.accentI}80)`,
 			},
 		},
 
-		"@media (min-width: 640px)": {
+		"@media (min-height: 731px)": { gap: 40, button: { fontSize: 16 } },
+
+		"@media (min-width: 768px)": {
 			position: "absolute",
 			left: "50%",
 			transform: "translateX(-50%)",
@@ -98,9 +85,11 @@ const Styled = {
 			gap: 10,
 			padding: "0 40px",
 			borderRadius: 30,
-			background: "linear-gradient(rgba(217, 217, 217, 0.125), transparent)",
+			background: `linear-gradient(${theme.color.accentI}80, transparent)`,
+
+			button: { fontSize: 11 },
 		},
-	}),
+	})),
 
 	Socials: styled.div({
 		position: "absolute",
@@ -110,20 +99,14 @@ const Styled = {
 		alignItems: "center",
 		gap: 16,
 
-		button: {
-			fontSize: 20,
-		},
+		a: { fontSize: 20 },
 
-		"@media (min-width: 640px)": {
+		"@media (min-width: 768px)": {
 			flexDirection: "column",
 			left: "1vw",
 			position: "fixed",
-		},
 
-		"@media (max-height: 480px)": {
-			button: {
-				fontSize: 16,
-			},
+			a: { fontSize: 22 },
 		},
 	}),
 };

@@ -8,143 +8,127 @@ export const Section = {
 		borderRadius: 5,
 	}),
 
-	Header: styled.header({
+	Header: styled.header(({ theme }) => ({
 		height: "15%",
 		display: "flex",
 		justifyContent: "space-between",
 		alignItems: "center",
 		padding: 5,
 		paddingLeft: 10,
-		background:
-			"linear-gradient(65deg, rgba(21, 21, 21, 1), rgba(35, 35, 35, 1), rgba(21, 21, 21, 1))",
-		color: "rgba(255, 255, 255, 1)",
+		background: `${theme.color.main}4D`,
+		color: theme.color.primary,
 
 		h1: {
-			fontSize: 17,
+			fontSize: 13,
+			letterSpacing: 1,
 			textTransform: "uppercase",
 		},
 
 		button: { fontSize: 11 },
-	}),
 
-	Content: styled.div({
+		"@media(min-width: 640px)": { h1: { fontSize: 15 } },
+		"@media(min-height: 731px)": { h1: { fontSize: 14 } },
+	})),
+
+	Content: styled.div(({ theme }) => ({
 		height: "85%",
-		overflowX: "auto",
-		overflowY: "hidden",
 		padding: "0 10px",
-		background: "linear-gradient( rgba(32, 32, 32, 0.125), rgba(32, 32, 32, 0.5) )",
+		background: `linear-gradient(${theme.color.main}0F, ${theme.color.main}5D)`,
 		alignItems: "center",
-	}),
+	})),
 };
 
 export const Content = {
-	Profile: styled(Section.Content)({
+	Profile: styled(Section.Content)(({ theme }) => ({
+		width: "100%",
 		display: "flex",
 		flexDirection: "column",
-		justifyContent: "space-evenly",
+		justifyContent: "space-between",
+		alignItems: "center",
 		textTransform: "uppercase",
 		letterSpacing: 1,
+		padding: 10,
 		textAlign: "center",
-		padding: 0,
 
 		img: {
 			height: "55%",
 			borderRadius: "10%",
-			boxShadow: "2px 2px 3px 2px rgba(5, 5, 5, 0.125)",
 		},
 
 		h3: {
-			fontSize: 15,
-			color: "rgba(217, 217, 217, 1)",
+			fontSize: 14,
+			color: theme.color.secondary,
 		},
 
 		p: {
-			fontSize: 12,
-			color: "rgba(165, 165, 165, 1)",
+			fontSize: 11,
+			color: theme.color.primary + "9F",
 		},
 
 		"media(min-width: 960px)": {
+			padding: "20px 0",
+
 			h3: { fontSize: 16 },
 			p: { fontSize: 13 },
 		},
 
-		"@media (min-height: 1024px)": {
-			h3: { fontSize: 20 },
-			p: { fontSize: 16 },
-		},
-	}),
+		"@media (min-height: 640px)": {
+			padding: "20px 0",
 
-	Projects: styled(Section.Content)({
+			h3: { fontSize: 15 },
+			p: { fontSize: 12 },
+		},
+
+		"@media (min-height: 731px)": {
+			h3: { fontSize: 16 },
+			p: { fontSize: 13 },
+		},
+
+		"@media (min-height: 960px)": {
+			h3: { fontSize: 18 },
+			p: { fontSize: 15 },
+		},
+	})),
+
+	Projects: styled(Section.Content)(({ theme }) => ({
+		overflowX: "auto",
+		overflowY: "hidden",
 		display: "flex",
 		gap: 50,
 		paddingLeft: 20,
 
-		div: {
-			minWidth: 225,
-			height: 150,
-			position: "relative",
-
-			"&::before": {
-				content: "''",
-				position: "absolute",
-				width: "100%",
-				height: 150,
-				background: "rgba(0, 0, 0, 0.125)",
-			},
-
-			img: {
-				width: "100%",
-				height: "90%",
-			},
-
-			p: {
-				fontSize: 12,
-				color: "rgba(165, 165, 165, 1)",
-				padding: "5px 0",
-				overflow: "hidden",
-				textOverflow: "ellipsis",
-				whiteSpace: "nowrap",
-			},
+		img: {
+			maxWidth: 225,
+			borderRadius: 6,
+			boxShadow: `0px 0px 1.5px 1.5px ${theme.color.main}4A`,
 		},
 
 		"@media (min-width: 960px)": {
 			overflowX: "hidden",
 			overflowY: "auto",
 			flexWrap: "wrap",
+			justifyContent: "space-evenly",
 			paddingTop: 20,
-
-			div: { width: 220 },
 		},
 
-		"@media (min-height: 1024px)": {
-			div: { p: { fontSize: 18 } },
-		},
-
-		"@media (min-height: 800px)": {
-			div: {
-				minWidth: 275,
-				height: 175,
-
-				"&::before": { height: 175 },
-			},
-		},
-	}),
+		"@media (min-height: 640px)": { img: { maxWidth: 250 } },
+		"@media (min-height: 731px)": { img: { maxWidth: 300 } },
+	})),
 };
 
 export default styled(Container)({
 	height: "90vh",
+	maxHeight: 800,
 	display: "grid",
 	gridTemplateRows: "1fr 1fr",
-	gap: 40,
-	paddingTop: 40,
-	paddingBottom: 40,
+	gap: 30,
+	paddingTop: 30,
+	paddingBottom: 30,
 
 	"@media (max-height: 480px)": { height: 600 },
 
-	"@media (min-height: 1024px)": { maxHeight: 960 },
-
-	"@media (min-width: 640px)": {
-		gridTemplateColumns: "1fr 1fr",
+	"@media (min-width: 960px)": {
+		gridTemplateColumns: "3fr 2fr",
 
 		"section:nth-child(2)": { gridColumn: "span 2" },
 	},

@@ -1,25 +1,26 @@
 import styled from "styled-components";
 
-export default styled.form({
+export default styled.form(({ theme }) => ({
 	width: "90%",
 	margin: "auto",
 	display: "flex",
 	flexDirection: "column",
 
 	legend: {
-		textTransform: "uppercase",
-		letterSpacing: 1.5,
-		fontSize: 18,
+		color: theme.color.primary,
+		fontSize: 17,
 		fontWeight: 600,
+		letterSpacing: 1.5,
+		textTransform: "uppercase",
 		marginBottom: 15,
+
+		"@media (min-width: 768px)": { fontSize: 19 },
 	},
 
 	button: {
 		width: "100%",
 		marginTop: 10,
 		border: "none",
-		boxShadow: "1px 1px 2px 1px rgba(0, 0, 0, 0.5)",
-		color: "rgba(0, 0, 0, 1)",
 		padding: 7.5,
 		textTransform: "uppercase",
 		letterSpacing: 1,
@@ -30,4 +31,4 @@ export default styled.form({
 		width: "60%",
 		margin: "auto",
 	},
-});
+}));

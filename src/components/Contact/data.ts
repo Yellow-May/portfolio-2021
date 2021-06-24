@@ -2,7 +2,7 @@ import { TiLocationOutline, TiMail, TiPhoneOutline } from "react-icons/ti";
 
 export const customStyles = {
 	overlay: {
-		background: "rgba(117, 117, 117, 0.25)",
+		background: "#9A9A9A9A",
 	},
 	content: {
 		width: "90%",

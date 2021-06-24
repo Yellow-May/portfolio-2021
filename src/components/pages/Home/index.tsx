@@ -55,9 +55,13 @@ const Home = () => {
 					{projects.map(
 						project =>
 							project.id < 7 && (
-								<div key={project.id}>
-									<img src={imgs[project.id]} alt={project.name} /> <p>{project.name}</p>
-								</div>
+								<a
+									href={project.sitePath}
+									target='_blank'
+									rel='noreferrer'
+									key={project.id}>
+									<img src={imgs[project.id]} alt={project.name} />
+								</a>
 							)
 					)}
 				</Content.Projects>

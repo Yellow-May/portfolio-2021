@@ -17,18 +17,19 @@ export default styled.button<StyledButtonProps>(props => ({
 	right: props.floater === "bottom-right" ? 16 : "",
 	borderRadius: props.floater ? "50%" : 5,
 	fontSize: props.variant === "icon" ? 16 : 13,
-	padding: props.variant === "icon" ? "5px 10px" : "5px 15px",
+	padding: props.variant === "icon" ? "5px 10px" : "7.5px 20px",
 	textTransform: props.variant === "link" ? "uppercase" : "unset",
 
 	background: props.active
-		? "linear-gradient(transparent, rgba(217, 217, 217, 0.125))"
+		? `linear-gradient(transparent, ${props.theme.color.accentII}80)`
+		: !props.variant
+		? props.theme.color.primary + "A0"
 		: "transparent",
-	color: "rgba(255, 255, 255, 1)",
-	borderWidth: props.variant ? 0 : 1,
-	borderStyle: props.variant ? "" : "solid",
+	color: props.variant ? props.theme.color.primary : props.theme.color.main,
+	border: "none",
 	boxShadow:
 		props.variant === "icon"
-			? "-1px -1px 0px rgba(255, 255, 255, 0.25), 1px 1px 0px rgba(0, 0, 0, 0.125)"
+			? "-1.5px -1.5px 0px rgba(255,255,255,0.25), 1.5px 1.5px 0px rgba(0,0,0,0.25)"
 			: "",
 
 	textDecoration: "none",
@@ -38,6 +39,6 @@ export default styled.button<StyledButtonProps>(props => ({
 	gap: 10,
 
 	"&:hover": {
-		background: "rgba(217, 217, 217, 0.125)",
+		background: `${props.theme.color.accentII}25`,
 	},
 }));

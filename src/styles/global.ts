@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-export default createGlobalStyle(_props => ({
+export default createGlobalStyle(({ theme }) => ({
 	"*,*::before,*::after": {
 		margin: 0,
 		padding: 0,
@@ -8,7 +8,7 @@ export default createGlobalStyle(_props => ({
 	},
 
 	body: {
-		backgroundColor: "rgba(49, 49, 49, 1)",
+		backgroundColor: theme.color.accentI,
 
 		"#root": {
 			minHeight: "100vh",

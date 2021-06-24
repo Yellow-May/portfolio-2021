@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 const Styled = {
-	Wrapper: styled.div({
+	Wrapper: styled.div(({ theme }) => ({
 		width: "100%",
 		minHeight: "100%",
-		background:
-			"linear-gradient(25deg, rgba(77, 77, 0, 1), rgba(217, 217, 0, 1), rgba(77, 77, 0, 1))",
-		color: "rgba(0, 0, 0, 1)",
+		background: theme.color.main,
+		color: theme.color.secondary,
 		textAlign: "center",
 		padding: "20px 0",
 
@@ -19,31 +18,34 @@ const Styled = {
 		},
 
 		h1: {
-			fontSize: 21,
-			marginBottom: 15,
+			fontSize: 18,
 			letterSpacing: 1,
 			textTransform: "uppercase",
 		},
-	}),
 
-	Detail: styled.div({
+		"@media (min-width: 768px)": { h1: { fontSize: 21 } },
+	})),
+
+	Detail: styled.div(({ theme }) => ({
 		display: "flex",
 		justifyContent: "center",
 		alignItems: "center",
 		gap: 10,
+		color: theme.color.primary,
 		marginBottom: 10,
+		fontSize: 14,
 
-		span: {
-			fontSize: 14,
-		},
-	}),
+		span: { color: theme.color.secondary },
 
-	Divider: styled.span({
+		"@media (min-width: 768px)": { fontSize: 16 },
+	})),
+
+	Divider: styled.span(({ theme }) => ({
 		display: "block",
 		width: "100%",
-		borderBottom: "thin solid rgba(165, 165, 165, 1)",
+		borderBottom: `thin solid ${theme.color.accentII}`,
 		margin: "15px 0",
-	}),
+	})),
 };
 
 export default Styled;

@@ -12,7 +12,7 @@ export default styled.div<StyledInputProps>(props => ({
 	textAlign: "left",
 
 	label: {
-		color: "rgba(72, 72, 72, 1)",
+		color: props.theme.color.secondary,
 		fontSize: 14,
 		fontWeight: 600,
 		paddingLeft: 5,
@@ -25,8 +25,8 @@ export default styled.div<StyledInputProps>(props => ({
 		outline: "none",
 		border: "none",
 		borderRadius: 5,
-		background: "rgba(217, 217, 217, 1)",
-		boxShadow: "1px 1px 2px 1px rgba(0, 0, 0, 0.5)",
+		background: props.theme.color.accentII,
+		color: "#000000",
 		paddingLeft: 10,
 		fontSize: 14,
 		letterSpacing: 1,
@@ -34,14 +34,23 @@ export default styled.div<StyledInputProps>(props => ({
 
 		"&:focus": {
 			boxShadow: props.error
-				? "1px 1px 2px 1px rgba(255, 0, 0, 0.5)"
-				: "1px 1px 2px 1px rgba(0, 0, 0, 0.5)",
+				? "1.5px 1.5px 1.5px rgba(255, 0, 0, 0.5)"
+				: `1.5px 1.5px 1.5px ${props.theme.color.secondary}`,
 		},
 	},
 
 	span: {
 		paddingLeft: 5,
 		fontSize: 12,
+		letterSpacing: 1,
 		color: "red",
+	},
+
+	"@media (min-width: 768px)": {
+		"label, input, textarea": { fontSize: 15 },
+
+		label: { marginBottom: 8 },
+
+		span: { fontSize: 13 },
 	},
 }));

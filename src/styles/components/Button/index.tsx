@@ -19,6 +19,7 @@ const Button: React.FC<ButtonProps> = props => {
 			as={props.as}
 			href={props.href}
 			target={props.href && "_blank"}
+			rel={props.href && "noreferrer"}
 			type={props.type || "button"}
 			onClick={props.handleClick}
 			title={props.title || undefined}
