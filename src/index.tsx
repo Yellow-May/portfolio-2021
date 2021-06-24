@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { AppProvider } from "./app/store";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
+import "react-toastify/dist/ReactToastify.css";
 
 ReactDOM.render(
 	<React.StrictMode>

@@ -1,4 +1,5 @@
 import React from "react";
+import { toast } from "react-toastify";
 import { useFormik } from "formik";
 import { useForm } from "@formspree/react";
 import * as Yup from "yup";
@@ -15,7 +16,12 @@ const ContactForm = () => {
 			subject: "",
 			message: "",
 		},
-		onSubmit: handleSubmit,
+		onSubmit: (e, values) => {
+			handleSubmit(e);
+			values.resetForm();
+			if (formstate.succeeded) toast.success("Thank you for reaching out");
+			else toast.error("There was an error, Please try again");
+		},
 		validationSchema: Yup.object({
 			email: Yup.string().email("Invalid email address").required("Required"),
 			subject: Yup.string().required("Required"),

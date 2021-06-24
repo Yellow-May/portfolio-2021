@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import { ThemeProvider } from "styled-components";
 import { AppContext } from "./app/store";
 import GlobalCss from "./styles/global";
@@ -18,6 +19,7 @@ const App = () => {
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalCss />
+			<ToastContainer hideProgressBar />
 			<Header />
 			<Switch>
 				<Route exact path='/' component={Home} />
