@@ -73,14 +73,14 @@
 	},
 	{
 		"id": 6,
-		"name": "REACT SHOPPING APP VERSON 2.0.0",
-		"sitePath": "https://shop-app-ymay.netlify.app/",
+		"name": "REACT SHOP WITH STORE API",
+		"sitePath": "https://react-shopping-app.vercel.app/",
 		"repoPath": "https://github.com/Yellow-May/react-shopping-app",
 		"categories": {
 			"jsframework": "REACTJS",
-			"cssframework": null,
-			"libraries": ["REACT-ROUTER-DOM"],
-			"technologies": ["CSS", "JAVASCRIPT"]
+			"cssframework": "STYLED-COMPONENTS",
+			"libraries": ["REACT-ROUTER-DOM", "REACT-TOASTIFY", "REACT-ICONS"],
+			"technologies": ["JAVASCRIPT"]
 		}
 	},
 	{
