@@ -1,24 +1,24 @@
-import React from "react";
-import { useSwipeable } from "react-swipeable";
-import { useHistory } from "react-router-dom";
-import { AppContext } from "../../app/store";
+import React from 'react';
+import { useSwipeable } from 'react-swipeable';
+import { useNavigate } from 'react-router-dom';
+import { AppContext } from 'app/store';
 
-import Styled from "./styled";
-import Container from "../../styles/components/Container";
-import Button from "../../styles/components/Button";
-import Switch from "./Switch";
+import Styled from './styled';
+import Container from 'styles/components/Container';
+import Button from 'styles/components/Button';
+import Switch from './Switch';
 
-import { CgMenuLeft, CgMenuRight } from "react-icons/cg";
-import { FaMoon, FaSun } from "react-icons/fa";
-import logo from "../../assets/images/mayv2.png";
-import { links, socials } from "./data";
+import { CgMenuLeft, CgMenuRight } from 'react-icons/cg';
+import { FaMoon, FaSun } from 'react-icons/fa';
+import logo from 'assets/images/mayv2.png';
+import { links, socials } from './data';
 
 const Header = () => {
 	const { state, actions } = React.useContext(AppContext);
 	const { currentPage, themeLight } = state;
 	const [navbarOpen, setnavbar] = React.useState(false);
 
-	const { push } = useHistory();
+	const navigate = useNavigate();
 
 	const closeNavBar = useSwipeable({ onSwipedLeft: () => setnavbar(false) });
 
@@ -36,7 +36,7 @@ const Header = () => {
 								title={link}
 								active={currentPage === link}
 								handleClick={() => {
-									link === "Home" ? push("/") : push(`/${link.toLowerCase()}`);
+									link === 'Home' ? navigate('/') : navigate(`/${link.toLowerCase()}`);
 									actions.changeCurrPage(link);
 									setnavbar(false);
 								}}>
@@ -67,12 +67,7 @@ const Header = () => {
 					{navbarOpen ? <CgMenuRight /> : <CgMenuLeft />}
 				</Button>
 
-				<Switch
-					checked={themeLight}
-					onClick={actions.toggleTheme}
-					leftIcon={FaMoon}
-					rightIcon={FaSun}
-				/>
+				<Switch checked={themeLight} onClick={actions.toggleTheme} leftIcon={FaMoon} rightIcon={FaSun} />
 			</Container>
 		</Styled.Wrapper>
 	);

@@ -1,14 +1,14 @@
-import React from "react";
-import Modal from "react-modal";
-import { AppContext } from "../../app/store";
+import React from 'react';
+import Modal from 'react-modal';
+import { AppContext } from 'app/store';
 
-import Styled from "./styled";
-import ContactForm from "./Form";
-import Button from "../../styles/components/Button";
-import { FaTimes } from "react-icons/fa";
-import { customStyles, details } from "./data";
+import Styled from './styled';
+import ContactForm from './Form';
+import Button from 'styles/components/Button';
+import { FaTimes } from 'react-icons/fa';
+import { customStyles, details } from './data';
 
-Modal.setAppElement("#root");
+Modal.setAppElement('#root');
 
 const ContactModal = () => {
 	const { state, actions } = React.useContext(AppContext);

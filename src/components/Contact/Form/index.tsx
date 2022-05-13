@@ -1,31 +1,30 @@
-import React from "react";
-import { toast } from "react-toastify";
-import { useFormik } from "formik";
-import { useForm } from "@formspree/react";
-import * as Yup from "yup";
-import Styled from "./styled";
-import Input from "./Input";
-import Button from "../../../styles/components/Button";
+import { toast } from 'react-toastify';
+import { useFormik } from 'formik';
+import { useForm } from '@formspree/react';
+import * as Yup from 'yup';
+import Styled from './styled';
+import Input from './Input';
+import Button from 'styles/components/Button';
 
 const ContactForm = () => {
-	const [formstate, handleSubmit] = useForm("xdopblag");
+	const [formstate, handleSubmit] = useForm('xdopblag');
 
 	const formik = useFormik({
 		initialValues: {
-			email: "",
-			subject: "",
-			message: "",
+			email: '',
+			subject: '',
+			message: '',
 		},
 		onSubmit: (e, values) => {
 			handleSubmit(e);
 			values.resetForm();
-			if (formstate.succeeded) toast.success("Thank you for reaching out");
-			else toast.error("There was an error, Please try again");
+			if (formstate.succeeded) toast.success('Thank you for reaching out');
+			else toast.error('There was an error, Please try again');
 		},
 		validationSchema: Yup.object({
-			email: Yup.string().email("Invalid email address").required("Required"),
-			subject: Yup.string().required("Required"),
-			message: Yup.string().required("Required"),
+			email: Yup.string().email('Invalid email address').required('Required'),
+			subject: Yup.string().required('Required'),
+			message: Yup.string().required('Required'),
 		}),
 	});
 

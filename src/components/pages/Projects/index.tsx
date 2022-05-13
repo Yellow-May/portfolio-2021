@@ -1,18 +1,18 @@
-import React from "react";
-import Styled from "./styled";
-import Button from "../../../styles/components/Button";
+import React from 'react';
+import Styled from './styled';
+import Button from 'styles/components/Button';
 
-import { FaAngleRight, FaAngleUp } from "react-icons/fa";
-import { CgChevronDoubleRight } from "react-icons/cg";
-import projects from "../../../data/projects.json";
-import { filters, imgs } from "./data";
+import { FaAngleRight, FaAngleUp } from 'react-icons/fa';
+import { CgChevronDoubleRight } from 'react-icons/cg';
+import projects from 'data/projects.json';
+import { filters, imgs } from './data';
 
 const Projects = () => {
-	const [currentfilter, setcurrentfilter] = React.useState("all");
+	const [currentfilter, setcurrentfilter] = React.useState('all');
 	const [state, setstate] = React.useState(projects);
 
 	const filterFunc = (filter: string) => {
-		if (filter === "all") setstate(projects);
+		if (filter === 'all') setstate(projects);
 		else
 			setstate(
 				projects.filter(
@@ -90,7 +90,7 @@ const Projects = () => {
 				variant='icon'
 				floater='bottom-right'
 				title='Back to Top'
-				handleClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+				handleClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
 				<FaAngleUp />
 			</Button>
 		</Styled.Wrapper>

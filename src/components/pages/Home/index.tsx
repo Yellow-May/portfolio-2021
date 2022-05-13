@@ -1,18 +1,18 @@
-import React from "react";
-import { useHistory } from "react-router-dom";
-import { AppContext } from "../../../app/store";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AppContext } from 'app/store';
 
-import StyledContainer, { Section, Content } from "./styled";
-import Button from "../../../styles/components/Button";
+import StyledContainer, { Section, Content } from './styled';
+import Button from 'styles/components/Button';
 
-import { CgArrowRight } from "react-icons/cg";
-import projects from "../../../data/projects.json";
-import profile from "../../../assets/images/profile.jpg";
-import { imgs } from "../Projects/data";
+import { CgArrowRight } from 'react-icons/cg';
+import projects from 'data/projects.json';
+import profile from 'assets/images/profile.jpg';
+import { imgs } from '../Projects/data';
 
 const Home = () => {
 	const { actions } = React.useContext(AppContext);
-	const { push } = useHistory();
+	const navigate = useNavigate();
 
 	return (
 		<StyledContainer as='main'>
@@ -23,8 +23,8 @@ const Home = () => {
 						variant='link'
 						title='Goto Profile Page'
 						handleClick={() => {
-							push("/profile");
-							actions.changeCurrPage("Profile");
+							navigate('/profile');
+							actions.changeCurrPage('Profile');
 						}}>
 						Go <CgArrowRight />
 					</Button>
@@ -44,8 +44,8 @@ const Home = () => {
 						variant='link'
 						title='Goto Projects Page'
 						handleClick={() => {
-							push("/projects");
-							actions.changeCurrPage("Projects");
+							navigate('/projects');
+							actions.changeCurrPage('Projects');
 						}}>
 						Go <CgArrowRight />
 					</Button>
@@ -55,11 +55,7 @@ const Home = () => {
 					{projects.map(
 						project =>
 							project.id < 7 && (
-								<a
-									href={project.sitePath}
-									target='_blank'
-									rel='noreferrer'
-									key={project.id}>
+								<a href={project.sitePath} target='_blank' rel='noreferrer' key={project.id}>
 									<img src={imgs[project.id]} alt={project.name} />
 								</a>
 							)

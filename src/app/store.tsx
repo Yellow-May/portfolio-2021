@@ -1,7 +1,7 @@
-import React from "react";
-import reducer, { ActionTypes } from "./reducer";
+import { FC, ReactNode, createContext, useReducer } from 'react';
+import reducer, { ActionTypes } from './reducer';
 
-export type CurrentPageTypes = "Home" | "Profile" | "Projects";
+export type CurrentPageTypes = 'Home' | 'Profile' | 'Projects';
 
 export interface InitialStateProps {
 	themeLight: boolean;
@@ -11,7 +11,7 @@ export interface InitialStateProps {
 
 const initialState: InitialStateProps = {
 	themeLight: false,
-	currentPage: "Home",
+	currentPage: 'Home',
 	contactOpen: false,
 };
 
@@ -22,12 +22,10 @@ interface ActionsProps {
 	toggleTheme: () => void;
 }
 
-export const AppContext = React.createContext(
-	{} as { state: InitialStateProps; actions: ActionsProps }
-);
+export const AppContext = createContext({} as { state: InitialStateProps; actions: ActionsProps });
 
-export const AppProvider: React.FC = ({ children }) => {
-	const [state, dispatch] = React.useReducer(reducer, initialState);
+export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
+	const [state, dispatch] = useReducer(reducer, initialState);
 
 	const actions: ActionsProps = {
 		openContact: () => dispatch({ type: ActionTypes.CONTACT_OPEN }),
